@@ -86,16 +86,6 @@ export default function HomePage() {
               </span>
             </Link>
           </div>
-
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <div className="flex flex-col items-center gap-2">
-              <div className="w-6 h-10 border-2 border-gray-600 rounded-full flex items-start justify-center p-2">
-                <div className="w-1.5 h-3 bg-red-500 rounded-full animate-pulse"></div>
-              </div>
-              <span className="text-xs text-gray-500 font-medium">Scroll</span>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -104,11 +94,11 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(239,68,68,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(239,68,68,0.02)_1px,transparent_1px)] bg-[size:3rem_3rem]"></div>
         
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-4 md:grid-cols-12 gap-6">
             {highlights.map((item, index) => (
               <div
                 key={index}
-                className="group relative text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-gray-100"
+                className="col-span-2 md:col-span-3 group relative text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-gray-100"
               >
                 {/* Gradient border on hover */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-red-500/20 to-red-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -147,8 +137,8 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Cards Grid - Simple 5 column layout */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8 max-w-7xl mx-auto px-4 lg:px-12">
             {quickLinks.map((link, index) => (
               <Link
                 key={index}
@@ -258,21 +248,14 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="bg-black text-gray-500 py-12 border-t border-gray-900">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            {/* Left side */}
-            <div className="text-center md:text-left">
+          <div className="flex flex-col items-center justify-center gap-6 text-center">
+            {/* Name and Title */}
+            <div>
               <h3 className="text-xl font-bold text-white mb-2">{personalInfo.name}</h3>
               <p className="text-sm text-gray-500">{personalInfo.title}</p>
             </div>
             
-            {/* Center */}
-            <div className="flex items-center gap-2">
-              <span className="text-sm">&copy; 2025</span>
-              <span className="text-sm text-gray-600">•</span>
-              <span className="text-sm">All rights reserved</span>
-            </div>
-            
-            {/* Right side */}
+            {/* Social Icons */}
             <div className="flex gap-6">
               <a href={`mailto:${personalInfo.email}`} className="text-gray-500 hover:text-red-500 transition-colors">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -284,6 +267,13 @@ export default function HomePage() {
                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                 </svg>
               </a>
+            </div>
+            
+            {/* Copyright */}
+            <div className="flex items-center gap-2 text-sm">
+              <span>&copy; 2025</span>
+              <span className="text-gray-600">•</span>
+              <span>All rights reserved</span>
             </div>
           </div>
         </div>
