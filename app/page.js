@@ -90,30 +90,20 @@ export default function HomePage() {
       </section>
 
       {/* Highlights Section */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(239,68,68,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(239,68,68,0.02)_1px,transparent_1px)] bg-[size:3rem_3rem]"></div>
-        
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-4 md:grid-cols-12 gap-6">
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {highlights.map((item, index) => (
               <div
                 key={index}
-                className="col-span-2 md:col-span-3 group relative text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-gray-100"
+                className="text-center p-8 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow"
               >
-                {/* Gradient border on hover */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-red-500/20 to-red-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                <div className="relative z-10">
-                  <div className="text-5xl md:text-6xl font-black bg-gradient-to-br from-red-500 to-red-600 bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-500">
-                    {item.number}
-                  </div>
-                  <div className="text-gray-700 font-semibold text-sm md:text-base tracking-wide uppercase">
-                    {item.label}
-                  </div>
+                <div className="text-5xl font-bold text-red-500 mb-2">
+                  {item.number}
                 </div>
-                
-                {/* Decorative corner */}
-                <div className="absolute top-3 right-3 w-8 h-8 border-t-2 border-r-2 border-red-500/20 rounded-tr-xl group-hover:border-red-500/60 transition-colors"></div>
+                <div className="text-gray-600 font-medium">
+                  {item.label}
+                </div>
               </div>
             ))}
           </div>
@@ -121,66 +111,34 @@ export default function HomePage() {
       </section>
 
       {/* Quick Navigation */}
-      <section className="py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
           {/* Section Header */}
-          <div className="text-center mb-20">
-            <div className="inline-block mb-4">
-              <span className="text-red-500 font-bold text-sm tracking-widest uppercase">Navigation</span>
-            </div>
-            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Explore More
             </h2>
-            <div className="w-24 h-1.5 bg-gradient-to-r from-red-500 to-red-600 mx-auto mb-6 rounded-full"></div>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600">
               Discover my journey, skills, and experience
             </p>
           </div>
 
-          {/* Cards Grid - Simple 5 column layout */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8 max-w-7xl mx-auto px-4 lg:px-12">
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
             {quickLinks.map((link, index) => (
               <Link
                 key={index}
                 href={link.href}
-                className="group relative block p-8 bg-gradient-to-br from-white to-gray-50 border-2 border-gray-200 rounded-3xl hover:border-red-500 hover:shadow-2xl hover:shadow-red-500/10 transition-all duration-500 overflow-hidden hover:-translate-y-2"
+                className="block p-6 bg-white border-2 border-gray-200 rounded-xl hover:border-red-500 hover:shadow-lg transition-all"
               >
-                {/* Background Pattern */}
-                <div className="absolute inset-0 bg-gradient-to-br from-red-500/0 to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                {/* Icon */}
-                <div className="relative mb-6">
-                  <div className="text-6xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 inline-block">
-                    {link.icon}
-                  </div>
-                  <div className="absolute -top-2 -right-2 w-12 h-12 bg-red-500/10 rounded-full blur-xl group-hover:bg-red-500/20 transition-colors"></div>
-                </div>
-                
-                {/* Content */}
-                <div className="relative">
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3 group-hover:text-red-500 transition-colors duration-300">
-                    {link.title}
-                  </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    {link.description}
-                  </p>
-                  
-                  {/* Arrow */}
-                  <div className="flex items-center text-red-500 font-semibold">
-                    <span className="mr-2">Learn more</span>
-                    <svg 
-                      className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </div>
-                </div>
-                
-                {/* Decorative corner accent */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-red-500/10 to-transparent rounded-bl-[3rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="text-5xl mb-4">{link.icon}</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  {link.title}
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  {link.description}
+                </p>
+                <span className="text-red-500 text-sm font-medium">Learn more →</span>
               </Link>
             ))}
           </div>
