@@ -1,7 +1,5 @@
 /* Modern Red-Black-Gray-White Theme */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   /* Primary Colors - Red */
