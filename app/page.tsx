@@ -1,3 +1,5 @@
+import { Footer } from "@/components/footer/page";
+
 export default function App() {
   return (
     <div className="min-h-screen bg-white">
@@ -6,6 +8,7 @@ export default function App() {
         <div className="absolute top-20 left-10 w-[500px] h-[500px] bg-red-500/20 rounded-full blur-[120px] animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-[600px] h-[600px] bg-red-600/10 rounded-full blur-[120px] animate-pulse"></div>
       </div>
+      <Footer/>
     </div>
   );
 }
