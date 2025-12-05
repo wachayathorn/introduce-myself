@@ -13,19 +13,13 @@ export function Footer() {
               href="#"
               className="text-sm hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 rounded"
             >
-              Privacy
+              LinkedIn
             </a>
             <a
               href="#"
               className="text-sm hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 rounded"
             >
-              Terms
-            </a>
-            <a
-              href="#"
-              className="text-sm hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 rounded"
-            >
-              Contact
+              Gmail
             </a>
           </nav>
         </div>
