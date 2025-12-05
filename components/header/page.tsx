@@ -2,8 +2,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full">
       <div className="mx-auto max-w-7xl p-4">
-        <div className="grid grid-cols-[1fr_auto] items-center">
-          <div className="text-2xl font-bold text-gray-800 hover:text-rose-500">Wachayathorn</div>
+        <div className="grid grid-cols-1 items-center">
           <nav className="hidden md:grid grid-cols-5 gap-6 text-sm font-medium">
             <a
               href="#overview"
