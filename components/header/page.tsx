@@ -1,4 +1,4 @@
-export function Header() {
+export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full font-mono">
       <div className="mx-auto max-w-7xl p-4">
