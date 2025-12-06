@@ -34,7 +34,8 @@ export default function App() {
           <div className="grid grid-cols-12 z-50 gap-5">
             <div className="animate-fade-in delay-400">
               <a
-                href="#projects"
+                href="https://github.com/wachayathorn"
+                target="_blank"
                 className="inline-block px-6 py-3 bg-red-500 text-white font-semibold rounded-md shadow-md hover:bg-red-600 transition"
               >
                 Github
@@ -42,7 +43,8 @@ export default function App() {
             </div>
             <div className="animate-fade-in delay-400">
               <a
-                href="#LinkedIn"
+                href="https://linkedin.com/in/wachayathorn"
+                target="_blank"
                 className="inline-block px-6 py-3 bg-red-500 text-white font-semibold rounded-md shadow-md hover:bg-red-600 transition"
               >
                 LinkedIn
