@@ -6,22 +6,6 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-3">
           {/* Column 1: copyright / small text */}
           <p className="text-sm">©2025 Wachayathorn Singsena. All rights reserved.</p>
-
-          {/* Column 2: simple nav / links */}
-          <nav aria-label="Footer navigation" className="flex items-center gap-3">
-            <a
-              href="#"
-              className="text-sm hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 rounded"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="#"
-              className="text-sm hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 rounded"
-            >
-              Gmail
-            </a>
-          </nav>
         </div>
       </div>
     </footer>

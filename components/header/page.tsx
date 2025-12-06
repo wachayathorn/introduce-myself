@@ -1,15 +1,15 @@
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full">
+    <header className="sticky top-0 z-50 w-full font-mono">
       <div className="mx-auto max-w-7xl p-4">
-        <div className="grid grid-cols-1 items-center">
-          <nav className="hidden md:grid grid-cols-5 gap-6 text-sm font-medium">
-            <a
-              href="#overview"
-              className="hover:text-red-600 transition duration-150 text-center"
-            >
-              Overview
+        <div className="grid grid-cols-3 items-center">
+          <div>
+            <a href="#top" className="text-2xl font-bold hover:text-red-600 transition duration-150">
+              {'{N}'}
             </a>
+          </div>
+          <div></div>
+          <nav className="hidden md:grid grid-cols-4 gap-2 text-sm font-light">
             <a
               href="#experience"
               className="hover:text-red-600 transition duration-150 text-center"
