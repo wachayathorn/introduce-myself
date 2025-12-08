@@ -11,7 +11,7 @@ export default function Experience() {
         <h2 className="text-5xl md:text-6xl font-black mb-2 tracking-tight">
           Experience
         </h2>
-        <div className="h-1 w-24 bg-gradient-to-r from-red-500 to-red-400 rounded-full"></div>
+        <div className="h-1 w-24 bg-linear-to-r from-red-500 to-red-400 rounded-full"></div>
       </div>
 
       {/* Experience Cards */}

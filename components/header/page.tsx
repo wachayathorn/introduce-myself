@@ -11,7 +11,7 @@ export default function Header() {
           <div></div>
           <nav className="hidden md:grid grid-cols-4 gap-2 text-sm font-light">
             <a
-              href="#experience"
+              href="/experience"
               className="hover:text-red-600 transition duration-150 text-center"
             >
               Experience
