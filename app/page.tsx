@@ -2,10 +2,6 @@ export default function App() {
   return (
     <div className="min-h-screen bg-white">
       <div className="container flex row-auto">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(239,68,68,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(239,68,68,0.03)_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
-        <div className="absolute top-20 left-10 w-[500px] h-[500px] bg-red-500/20 rounded-full blur-[120px] animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-[600px] h-[600px] bg-red-600/10 rounded-full blur-[120px] animate-pulse"></div>
-
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 text-left">
           <div className="mb-8 inline-block animate-fade-in">
             <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-red-500/10 backdrop-blur-sm border border-red-500/20 rounded-full text-red-400 text-sm font-semibold tracking-wide">

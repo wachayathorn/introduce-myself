@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full font-mono">
+    <header className="sticky top-0 z-50 w-full font-mono bg-rose-50">
       <div className="mx-auto max-w-7xl p-4">
         <div className="grid grid-cols-3 items-center">
           <div>
