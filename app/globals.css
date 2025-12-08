@@ -1,2 +1,29 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+
+@layer base {
+  html,
+  body {
+    @apply relative w-full h-full;
+  }
+
+  /* Grid background pattern using pseudo-element */
+  body::before {
+    content: "";
+    @apply fixed inset-0 pointer-events-none z-0;
+    background-image:
+      linear-gradient(rgba(239, 68, 68, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(239, 68, 68, 0.03) 1px, transparent 1px);
+    background-size: 4rem 4rem;
+    mask-image: radial-gradient(
+      ellipse 80% 50% at 50% 50%,
+      #000 70%,
+      transparent 100%
+    );
+    -webkit-mask-image: radial-gradient(
+      ellipse 80% 50% at 50% 50%,
+      #000 70%,
+      transparent 100%
+    );
+  }
+}
