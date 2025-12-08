@@ -4,7 +4,7 @@ export default function Header() {
       <div className="mx-auto max-w-7xl p-4">
         <div className="grid grid-cols-3 items-center">
           <div>
-            <a href="#top" className="text-2xl font-bold hover:text-red-600 transition duration-150">
+            <a href="/" className="text-2xl font-bold hover:text-red-600 transition duration-150">
               {'{N}'}
             </a>
           </div>
