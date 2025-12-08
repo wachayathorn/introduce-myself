@@ -1,5 +1,6 @@
 import Footer from "@/components/footer/page";
 import Header from "@/components/header/page";
+import Experience from "@/components/experience/page";
 
 export default function App() {
   return (
@@ -53,6 +54,7 @@ export default function App() {
           </div>
         </div>
       </div>
+      <Experience />
       <Footer />
     </div>
   );
