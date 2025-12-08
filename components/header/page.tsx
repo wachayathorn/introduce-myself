@@ -17,7 +17,7 @@ export default function Header() {
               Experience
             </a>
             <a
-              href="#education"
+              href="/education"
               className="hover:text-red-600 transition duration-150 text-center"
             >
               Education
