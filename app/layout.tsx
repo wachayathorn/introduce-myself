@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/navbar/navbar";
-import { JetBrains_Mono } from "next/font/google";
-
-const jetBrainsMono = JetBrains_Mono();
 
 export const metadata: Metadata = {
   title: "Introduce myself",
@@ -16,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={jetBrainsMono.className}>
+    <html lang="en" className="font-mono">
       <body className="items-center">
         <Navbar />
         {children}
