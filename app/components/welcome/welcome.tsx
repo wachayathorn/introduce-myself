@@ -1,19 +1,23 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import Line from "../line/line";
 
 export default function Welcome() {
   return (
-    <div className="container mx-auto max-w-7xl h-auto p-5 flex flex-col md:py-35 md:px-55 justify-start">
-      <h1 className="text-5xl font-bold">HI, I'M WACHAYATHORN SINGSENA</h1>
+    <div className="container mx-auto max-w-7xl h-auto p-5 flex flex-col md:pt-25 text-center items-center">
+      <h1 className="text-7xl font-bold">
+        <span className="text-black">WACHAYATHORN </span>
+        <span className="text-[#4D4D4D]">SINGSENA</span>
+      </h1>
       <h2 className="text-xl font-semibold pt-5">Software Engineer</h2>
       <p className="text-[#4D4D4D] font-medium pt-2.5">
         With 5+ years of experience, specializing in building scalable
-        microservices and <br />
-        high-performance APIs. Skilled in concurrency, distributed systems, and
-        optimizing backend architectures for reliability. Experienced in API
-        design, database design, message queues, and cloud-native
-        infrastructure.
+        microservices and high-performance APIs. <br />
+        Skilled in concurrency, distributed systems, and optimizing backend
+        architectures for reliability. <br />
+        Experienced in API design, database design, message queues, and
+        cloud-native infrastructure.
       </p>
-      <div className="flex flex-col-2 md:flex md:flex-row pt-5 gap-2.5">
+      <div className="flex flex-col-2 md:flex md:flex-row py-10 gap-2.5">
         <a
           href="https://github.com/wachayathorn"
           target="_blank"
@@ -31,6 +35,7 @@ export default function Welcome() {
           LinkedIn
         </a>
       </div>
+      <Line />
     </div>
   );
 }

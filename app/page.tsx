@@ -1,9 +1,11 @@
+import Experience from "./components/experience/experience";
 import Welcome from "./components/welcome/welcome";
 
 export default function Home() {
   return (
-    <div className="container">
+    <div>
       <Welcome />
+      <Experience />
     </div>
   );
 }
