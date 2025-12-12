@@ -15,9 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="font-mono">
-      <body className="items-center">
+      <body className="flex flex-col min-h-screen">
         <Navbar />
-        {children}
+        <main className="grow py-1">
+          {children}
+        </main>
         <Footer/>
       </body>
     </html>
