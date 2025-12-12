@@ -13,7 +13,7 @@ export default function Welcome() {
         design, database design, message queues, and cloud-native
         infrastructure.
       </p>
-      <div className="grid grid-cols md:flex md:flex-row pt-5 gap-2.5">
+      <div className="flex flex-col-2 md:flex md:flex-row pt-5 gap-2.5">
         <a
           href="https://github.com/wachayathorn"
           target="_blank"
@@ -25,7 +25,7 @@ export default function Welcome() {
         <a
           href="https://linkedin.com/in/wachayathorn"
           target="_blank"
-          className="bg-black flex flex-row h-auto w-auto gap-2 p-2 rounded-xl items-center text-white hover:bg-[#FAFAFA] hover:text-black"
+          className="bg-black flex flex-row h-auto gap-2 p-2 rounded-xl items-center text-white hover:bg-[#FAFAFA] hover:text-black"
         >
           <FaLinkedin />
           LinkedIn
