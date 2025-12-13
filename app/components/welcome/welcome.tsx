@@ -4,9 +4,9 @@ import Line from "../line/line";
 export default function Welcome() {
   return (
     <div className="container mx-auto max-w-7xl h-auto p-5 flex flex-col md:pt-25 text-center items-center">
-      <h1 className="text-7xl font-bold">
-        <span className="text-black">WACHAYATHORN </span>
-        <span className="text-[#4D4D4D]">SINGSENA</span>
+      <h1 className="font-bold text-2xl sm:text-4xl md:text-7xl">
+        <span className="text-black">WACHAYATHORN</span>
+        <span className="text-[#4D4D4D]"> SINGSENA</span>
       </h1>
       <h2 className="text-xl font-semibold pt-5">Software Engineer</h2>
       <p className="text-[#4D4D4D] font-medium pt-2.5">

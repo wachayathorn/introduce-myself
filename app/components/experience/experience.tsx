@@ -7,10 +7,11 @@ export default function Experience() {
       <div className="container mx-auto max-w-7xl h-auto p-5 gap-10 flex flex-col md:px-55 md:flex md:flex-row">
         <div className="md:w-1/2 flex flex-col text-center md:text-end p-5">
           <h1 className="text-3xl md:text-4xl font-bold p-5">
-            5 YEARS OF EXPERIENCE
+            <span className="text-[35px]">5 YEARS OF</span> <br />
+            <span className="text-[#4D4D4D]">EXPERIENCE</span>
           </h1>
         </div>
-        <div className="md:w-1/2 flex flex-col text-center md:text-left p-5">
+        <div className="md:w-1/2 flex flex-col text-center p-5 md:text-left">
           {experiences.map((experience, index) => (
             <div
               key={index}
