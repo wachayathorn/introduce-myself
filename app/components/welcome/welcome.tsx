@@ -3,7 +3,7 @@ import Line from "../line/line";
 
 export default function Welcome() {
   return (
-    <div className="flex min-h-screen snap-start grow items-center">
+    <div id="home" className="flex min-h-screen snap-start grow items-center justify-center">
       <div className="container mx-auto max-w-7xl h-auto p-5 flex flex-col text-center items-center">
         <h1 className="font-bold text-2xl sm:text-4xl md:text-7xl">
           <span className="text-black">WACHAYATHORN</span>

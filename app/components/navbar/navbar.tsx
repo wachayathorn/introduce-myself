@@ -3,12 +3,17 @@
 import { useEffect, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 
+function isMobileWidth(width: number) {
+  return width < 768;
+}
+
 export default function Navbar() {
   const [isHidden, setIsHidden] = useState(false);
 
   useEffect(() => {
     function handleResize() {
-      if (window.innerWidth < 768) {
+      const newWidth = window.innerWidth;
+      if (isMobileWidth(newWidth)) {
         setIsHidden(true);
       } else {
         setIsHidden(false);
@@ -23,31 +28,51 @@ export default function Navbar() {
     <div className="sticky top-0 w-full bg-[#FAFAFA] shadow-md">
       <nav className="container mx-auto max-w-7xl h-auto p-5 flex flex-col items-center md:flex-row md:justify-center">
         {!isHidden ? (
-          <ul
-            className="flex flex-col md:flex-row"
-            onClick={() => setIsHidden(true)}
-          >
+          <ul className="flex flex-col md:flex-row">
             <li className="mx-10 text-center">
-              <span className="cursor-pointer hover:font-extrabold">HOME</span>
+              <a href="#home" className="cursor-pointer hover:font-extrabold">
+                HOME
+              </a>
             </li>
             <li className="mx-10 text-center">
-              <span className="cursor-pointer hover:font-extrabold">
+              <a
+                href="#experience"
+                className="cursor-pointer hover:font-extrabold"
+              >
                 EXPERIENCE
-              </span>
+              </a>
             </li>
             <li className="mx-10 text-center">
-              <span className="cursor-pointer hover:font-extrabold">
+              <a href="#stack" className="cursor-pointer hover:font-extrabold">
+                STACK
+              </a>
+            </li>
+            <li className="mx-10 text-center">
+              <a
+                href="#education"
+                className="cursor-pointer hover:font-extrabold"
+              >
                 EDUCATION
-              </span>
+              </a>
             </li>
             <li className="mx-10 text-center">
-              <span className="cursor-pointer hover:font-extrabold">SKILL</span>
-            </li>
-            <li className="mx-10 text-center">
-              <span className="cursor-pointer hover:font-extrabold">
+              <a
+                href="#contact"
+                className="cursor-pointer hover:font-extrabold"
+              >
                 CONTACT
-              </span>
+              </a>
             </li>
+            {!isHidden && (
+              <li className="mx-10 text-center md:hidden">
+                <a
+                  className="cursor-pointer hover:font-extrabold"
+                  onClick={() => setIsHidden(true)}
+                >
+                  ...
+                </a>
+              </li>
+            )}
           </ul>
         ) : (
           <RxHamburgerMenu

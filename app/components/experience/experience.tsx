@@ -3,7 +3,7 @@ import Line from "../line/line";
 
 export default function Experience() {
   return (
-    <div className="flex min-h-screen snap-start grow items-center">
+    <div id="experience" className="flex min-h-screen snap-start grow items-center">
       <div className="container flex flex-col mx-auto max-w-7xl">
         <div className="p-5 gap-10 flex flex-col md:flex md:flex-row">
           <div className="md:w-1/2 flex flex-col text-center md:text-end p-5">
