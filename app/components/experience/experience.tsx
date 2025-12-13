@@ -1,4 +1,4 @@
-import { experiences } from "@/data/experiences";
+import { experiences } from "@/app/data/experiences";
 import Line from "../line/line";
 
 export default function Experience() {
