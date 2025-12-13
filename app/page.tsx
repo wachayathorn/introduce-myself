@@ -7,7 +7,7 @@ export default function Home() {
     <div className="snap-y snap-mandatory overflow-y-scroll h-screen">
       <Welcome />
       <Experience />
-      {/* <Stack /> */}
+      <Stack />
     </div>
   );
 }
