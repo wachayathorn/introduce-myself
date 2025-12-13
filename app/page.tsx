@@ -4,10 +4,10 @@ import Welcome from "./components/welcome/welcome";
 
 export default function Home() {
   return (
-    <div>
+    <div className="snap-y snap-mandatory overflow-y-scroll h-screen">
       <Welcome />
       <Experience />
-      <Stack />
+      {/* <Stack /> */}
     </div>
   );
 }

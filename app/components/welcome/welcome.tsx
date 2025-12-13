@@ -3,8 +3,8 @@ import Line from "../line/line";
 
 export default function Welcome() {
   return (
-    <div className="flex min-h-screen grow items-center">
-      <div className="container mx-auto max-w-7xl h-auto p-5 flex flex-col md:pt-25 text-center items-center">
+    <div className="flex min-h-screen snap-start grow items-center">
+      <div className="container mx-auto max-w-7xl h-auto p-5 flex flex-col text-center items-center">
         <h1 className="font-bold text-2xl sm:text-4xl md:text-7xl">
           <span className="text-black">WACHAYATHORN</span>
           <span className="text-[#4D4D4D]"> SINGSENA</span>
