@@ -16,7 +16,7 @@ export default function Experience() {
             {experiences.map((experience, index) => (
               <div
                 key={index}
-                className="hover:bg-[#FAFAFA] flex flex-col p-5 rounded-xl"
+                className="hover:bg-[#FAFAFA] hover:z-50 hover:shadow-2xl flex flex-col p-5 rounded-xl"
               >
                 <h2 className="text-2xl font-semibold">{experience.title}</h2>
                 <h3 className="text-xl font-medium">{experience.company}</h3>
