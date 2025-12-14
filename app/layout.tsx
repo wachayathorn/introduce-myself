@@ -17,10 +17,8 @@ export default function RootLayout({
     <html lang="en" className="font-mono">
       <body className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="grow py-1">
-          {children}
-        </main>
-        <Footer/>
+        <main className="grow">{children}</main>
+        <Footer />
       </body>
     </html>
   );
