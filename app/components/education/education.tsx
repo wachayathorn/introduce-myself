@@ -14,8 +14,8 @@ export default function Education() {
           <img src="/rmutt.png" width={100} height={120} />
         </a>
         <div className="hover:bg-[#FAFAFA] hover:z-50 hover:shadow-2xl flex flex-col p-5 rounded-xl items-center">
-          <h2 className="text-2xl font-semibold">{education.degree}</h2>
-          <h3 className="text-xl font-medium">{education.institution}</h3>
+          <h2 className="text-2xl font-semibold text-center">{education.degree}</h2>
+          <h3 className="text-xl font-medium text-center">{education.institution}</h3>
           <p className="text-gray-600 text-center">
             {education.period} <br /> {education.location}
           </p>
