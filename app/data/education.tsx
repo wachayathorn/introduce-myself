@@ -1,5 +1,4 @@
 export const education = {
-  id: 1,
   degree: "Bachelor of Computer Engineering",
   institution: "Rajamangala University of Technology Thanyaburi",
   period: "08/2016 - 04/2020",

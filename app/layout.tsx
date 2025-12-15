@@ -15,10 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="font-mono">
-      <body className="flex flex-col min-h-screen">
+      <body className="flex flex-col min-h-screen overflow-y-hidden">
         <Navbar />
         <main className="grow">{children}</main>
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
