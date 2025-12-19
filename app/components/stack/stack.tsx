@@ -1,11 +1,12 @@
 import { stacks } from "@/app/data/stack";
+import Line from "../line/line";
 
 export default function Stack() {
   return (
     <div id="stack" className="flex min-h-screen snap-start grow items-center">
       <div className="container mx-auto max-w-7xl h-auto p-5 flex flex-col items-center justify-center">
         <h1 className="text-3xl md:text-4xl font-bold p-5 text-center">
-          Technologies I Work With <br /> 
+          Technologies I Work With <br />
           <span className="text-[#4D4D4D] font-light text-xs md:text-xl">
             Tech stack I have experience in
           </span>
@@ -32,6 +33,7 @@ export default function Stack() {
             </div>
           ))}
         </div>
+        <Line />
       </div>
     </div>
   );

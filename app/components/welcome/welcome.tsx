@@ -18,7 +18,7 @@ export default function Welcome() {
           Experienced in API design, database design, message queues, and
           cloud-native infrastructure.
         </p>
-        <div className="flex flex-col-2 md:flex md:flex-row py-10 gap-2.5">
+        <div className="flex flex-col-2 md:flex md:flex-row pt-10 gap-2.5">
           <a
             href="https://github.com/wachayathorn"
             target="_blank"
