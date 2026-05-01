@@ -5,34 +5,31 @@ export default function Welcome() {
   return (
     <div
       id="home"
-      className="relative flex min-h-screen snap-start grow items-center justify-center overflow-hidden"
+      className="relative flex min-h-screen snap-start grow items-center justify-center overflow-hidden bg-gradient-to-br from-white-off via-white to-gray-100"
     >
-      {/* Animated Background Gradient */}
-      <div className="absolute inset-0 bg-linear-to-br from-white via-[#FAFAFA] to-gray-100 animate-gradient-shift" />
-
       {/* Floating Decorative Elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-linear-to-br from-black/5 to-transparent rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-20 right-10 w-40 h-40 bg-linear-to-br from-gray-400/10 to-transparent rounded-full blur-3xl animate-float-delayed" />
+      <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-black/5 to-transparent rounded-full blur-3xl animate-float" />
+      <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-gray-medium/10 to-transparent rounded-full blur-3xl animate-float-delayed" />
 
       <div className="container mx-auto max-w-7xl h-auto p-5 flex flex-col text-center items-center relative z-10">
         {/* Name with Animated Gradient */}
         <h1 className="font-bold text-2xl sm:text-4xl md:text-7xl animate-fade-in-up">
-          <span className="inline-block bg-linear-to-r from-black via-gray-800 to-black bg-size-[200%_100%] animate-gradient-text bg-clip-text text-transparent">
+          <span className="inline-block bg-gradient-to-r from-black via-gray-medium to-black bg-size-[200%_100%] animate-gradient-text bg-clip-text text-transparent">
             WACHAYATHORN
           </span>
-          <span className="text-[#4D4D4D] animate-fade-in-up animation-delay-200">
+          <span className="text-gray-muted animate-fade-in-up animation-delay-200">
             {" "}
             SINGSENA
           </span>
         </h1>
 
         {/* Job Title */}
-        <h2 className="text-xl font-semibold pt-5 animate-fade-in-up animation-delay-300">
+        <h2 className="text-xl font-semibold pt-5 animate-fade-in-up animation-delay-300 text-black">
           Software Engineer
         </h2>
 
         {/* Description */}
-        <p className="text-[#4D4D4D] font-medium pt-2.5 max-w-3xl animate-fade-in-up animation-delay-400">
+        <p className="text-gray-muted font-medium pt-2.5 max-w-3xl animate-fade-in-up animation-delay-400 leading-relaxed">
           With 5+ years of experience, specializing in building scalable
           microservices and high-performance APIs. <br />
           Skilled in concurrency, distributed systems, and optimizing backend
@@ -46,7 +43,7 @@ export default function Welcome() {
           <a
             href="https://github.com/wachayathorn"
             target="_blank"
-            className="group bg-black flex flex-row h-auto w-auto gap-2 px-4 py-2 rounded-xl items-center text-white transition-all duration-300 hover:bg-[#FAFAFA] hover:text-black hover:scale-105 hover:shadow-2xl"
+            className="group bg-black flex flex-row h-auto w-auto gap-2 px-6 py-3 rounded-xl items-center text-white transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 hover:shadow-lg"
           >
             <FaGithub className="transition-transform duration-300 group-hover:rotate-12" />
             Github
@@ -54,7 +51,7 @@ export default function Welcome() {
           <a
             href="https://linkedin.com/in/wachayathorn"
             target="_blank"
-            className="group bg-black flex flex-row h-auto gap-2 px-4 py-2 rounded-xl items-center text-white transition-all duration-300 hover:bg-[#FAFAFA] hover:text-black hover:scale-105 hover:shadow-2xl"
+            className="group bg-black flex flex-row h-auto gap-2 px-6 py-3 rounded-xl items-center text-white transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 hover:shadow-lg"
           >
             <FaLinkedin className="transition-transform duration-300 group-hover:rotate-12" />
             LinkedIn

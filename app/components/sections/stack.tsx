@@ -3,11 +3,11 @@ import Line from "../ui/line";
 
 export default function Stack() {
   return (
-    <div id="stack" className="flex min-h-screen snap-start grow items-center">
+    <div id="stack" className="flex min-h-screen snap-start grow items-center bg-white-off">
       <div className="container mx-auto max-w-7xl h-auto p-5 flex flex-col items-center justify-center">
-        <h1 className="text-3xl md:text-4xl font-bold p-5 text-center">
+        <h1 className="text-3xl md:text-4xl font-bold p-5 text-center text-black">
           Technologies I Work With <br />
-          <span className="text-[#4D4D4D] font-light text-xs md:text-xl">
+          <span className="text-gray-muted font-light text-xs md:text-xl">
             Tech stack I have experience in
           </span>
         </h1>
@@ -15,18 +15,18 @@ export default function Stack() {
           {stacks.map((stackCategory) => (
             <div
               key={stackCategory.title}
-              className="flex flex-col items-center shadow-2xl md:mx-2 my-2 rounded-3xl p-5"
+              className="flex flex-col items-center bg-white border border-gray-light shadow-sm md:mx-2 my-2 rounded-2xl p-6 transition-all duration-300 hover:shadow-md"
             >
-              <div className="font-bold text-xl md:text-2xl p-5">
+              <div className="font-bold text-xl md:text-2xl p-5 text-black">
                 {stackCategory.title}
               </div>
-              <ul className=" grid grid-cols-2 gap-4 justify-center">
+              <ul className="grid grid-cols-2 gap-4 justify-center">
                 {stackCategory.icons.map((icon, index) => (
                   <li
                     key={index}
-                    className="p-2 rounded-3xl hover:bg-[#d6d0d0] hover:scale-105 hover:z-50 hover:shadow-2xl transition-transform flex flex-col items-center"
+                    className="p-3 rounded-xl hover:bg-white-off hover:scale-105 transition-all duration-300 flex flex-col items-center"
                   >
-                    <img src={icon} className="w-10 h-10 md:w-15 md:h-15 m-2" />
+                    <img src={icon} className="w-10 h-10 md:w-14 md:h-14 m-2" />
                   </li>
                 ))}
               </ul>

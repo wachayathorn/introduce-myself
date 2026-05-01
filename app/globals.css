@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300..800&family=JetBrains+Mono:wght@400..700&display=swap");
 @import "tailwindcss";
 
 /* ===========================
@@ -17,7 +17,41 @@
   }
 }
 
-/* Animated gradient text */
+/* Simple fade in */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Smooth slide up */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtle scale in */
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animated gradient text - subtle */
 @keyframes gradient-text {
   0%,
   100% {
@@ -39,25 +73,25 @@
   }
 }
 
-/* Floating animation */
+/* Floating animation - gentler */
 @keyframes float {
   0%,
   100% {
     transform: translateY(0px) translateX(0px);
   }
   50% {
-    transform: translateY(-20px) translateX(10px);
+    transform: translateY(-10px) translateX(5px);
   }
 }
 
-/* Floating animation with delay */
+/* Floating animation with delay - gentler */
 @keyframes float-delayed {
   0%,
   100% {
     transform: translateY(0px) translateX(0px);
   }
   50% {
-    transform: translateY(-15px) translateX(-10px);
+    transform: translateY(-8px) translateX(-5px);
   }
 }
 
@@ -66,24 +100,36 @@
    =========================== */
 
 .animate-fade-in-up {
-  animation: fade-in-up 0.8s ease-out forwards;
+  animation: fade-in-up 1s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.9s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.7s ease-out forwards;
 }
 
 .animate-gradient-text {
-  animation: gradient-text 3s ease infinite;
+  animation: gradient-text 4s ease infinite;
 }
 
 .animate-gradient-shift {
   background-size: 200% 200%;
-  animation: gradient-shift 15s ease infinite;
+  animation: gradient-shift 20s ease infinite;
 }
 
 .animate-float {
-  animation: float 6s ease-in-out infinite;
+  animation: float 8s ease-in-out infinite;
 }
 
 .animate-float-delayed {
-  animation: float-delayed 8s ease-in-out infinite;
+  animation: float-delayed 10s ease-in-out infinite;
 }
 
 /* Animation delays */

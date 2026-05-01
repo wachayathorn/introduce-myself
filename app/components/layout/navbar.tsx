@@ -25,32 +25,38 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="sticky top-0 w-full bg-[#FAFAFA] shadow-md">
+    <div className="sticky top-0 w-full bg-white-off border-b border-gray-light">
       <nav className="container mx-auto max-w-7xl h-auto p-5 flex flex-col items-center md:flex-row md:justify-center">
         {!isHidden ? (
           <ul className="flex flex-col md:flex-row">
             <li className="mx-10 text-center">
-              <a href="#home" className="cursor-pointer hover:font-extrabold">
+              <a
+                href="#home"
+                className="cursor-pointer text-black hover:text-gray-muted transition-colors duration-200"
+              >
                 HOME
               </a>
             </li>
             <li className="mx-10 text-center">
               <a
                 href="#experience"
-                className="cursor-pointer hover:font-extrabold"
+                className="cursor-pointer text-black hover:text-gray-muted transition-colors duration-200"
               >
                 EXPERIENCE
               </a>
             </li>
             <li className="mx-10 text-center">
-              <a href="#stack" className="cursor-pointer hover:font-extrabold">
+              <a
+                href="#stack"
+                className="cursor-pointer text-black hover:text-gray-muted transition-colors duration-200"
+              >
                 STACK
               </a>
             </li>
             <li className="mx-10 text-center">
               <a
                 href="#education"
-                className="cursor-pointer hover:font-extrabold"
+                className="cursor-pointer text-black hover:text-gray-muted transition-colors duration-200"
               >
                 EDUCATION
               </a>
@@ -58,7 +64,7 @@ export default function Navbar() {
             <li className="mx-10 text-center">
               <a
                 href="#contact"
-                className="cursor-pointer hover:font-extrabold"
+                className="cursor-pointer text-black hover:text-gray-muted transition-colors duration-200"
               >
                 CONTACT
               </a>
@@ -66,7 +72,7 @@ export default function Navbar() {
             {!isHidden && (
               <li className="mx-10 text-center md:hidden">
                 <a
-                  className="cursor-pointer hover:font-extrabold"
+                  className="cursor-pointer text-black hover:text-gray-muted transition-colors duration-200"
                   onClick={() => setIsHidden(true)}
                 >
                   ...
@@ -76,7 +82,7 @@ export default function Navbar() {
           </ul>
         ) : (
           <RxHamburgerMenu
-            className="cursor-pointer"
+            className="cursor-pointer text-black"
             onClick={() => setIsHidden(false)}
           />
         )}

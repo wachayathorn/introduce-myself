@@ -14,8 +14,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="font-mono">
-      <body className="flex flex-col min-h-screen">
+    <html lang="en" className="font-sans">
+      <body className="flex flex-col min-h-screen bg-white-off">
         <Navbar />
         <main className="grow">{children}</main>
         <Footer />
