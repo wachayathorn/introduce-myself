@@ -1,5 +1,5 @@
-import { education } from "@/app/data/education";
-import Line from "../line/line";
+import { education } from "@/lib/data";
+import Line from "../ui/line";
 
 export default function Education() {
   return (

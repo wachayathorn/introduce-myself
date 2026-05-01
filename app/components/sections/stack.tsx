@@ -1,5 +1,5 @@
-import { stacks } from "@/app/data/stack";
-import Line from "../line/line";
+import { stacks } from "@/lib/data";
+import Line from "../ui/line";
 
 export default function Stack() {
   return (

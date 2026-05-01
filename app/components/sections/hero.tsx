@@ -1,5 +1,5 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import Line from "../line/line";
+import Line from "../ui/line";
 
 export default function Welcome() {
   return (

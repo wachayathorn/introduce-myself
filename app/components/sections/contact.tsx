@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Line from "../line/line";
+import Line from "../ui/line";
 
 export default function Contact() {
   const [formData, setFormData] = useState({

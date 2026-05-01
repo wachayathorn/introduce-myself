@@ -42,24 +42,37 @@ The site will auto-reload as you make changes to files.
 
 ```
 app/
-├── layout.tsx              # Global layout with Navbar & Footer
-├── page.tsx                # Homepage - combines Welcome & Experience sections
-├── globals.css             # Global styles
+├── (marketing)/            # Route group for public pages
+│   ├── page.tsx            # Homepage - combines all sections
+│   └── projects/
+│       └── [slug]/
+│           └── page.tsx    # Project detail pages
 ├── components/
-│   ├── welcome/            # Hero section with intro & social links
-│   ├── experience/         # Experience timeline component
-│   ├── navbar/             # Top navigation bar
-│   ├── footer/             # Footer component
-│   └── line/               # Decorative divider component
-└── data/
-    └── experiences.tsx     # Experience data (single source of truth)
+│   ├── sections/          # Page sections
+│   │   ├── hero.tsx        # Hero section with intro & social links
+│   │   ├── experience.tsx  # Experience timeline component
+│   │   ├── stack.tsx       # Tech stack display
+│   │   ├── education.tsx   # Education background
+│   │   └── contact.tsx     # Contact form
+│   ├── ui/                 # Reusable UI components
+│   │   └── line.tsx        # Decorative divider component
+│   └── layout/             # Layout components
+│       ├── navbar.tsx      # Top navigation bar
+│       └── footer.tsx      # Footer component
+├── layout.tsx              # Global layout
+├── globals.css             # Global styles
+lib/
+├── data.ts                 # Centralized data (experiences, education, stack, projects)
+└── utils.ts                # Utility functions
+types/
+└── index.ts                # TypeScript interfaces
 ```
 
 ## ✏️ How to Customize
 
 ### Update Your Experience History
 
-Edit `app/data/experiences.tsx` and modify the `experiences` array:
+Edit `lib/data.ts` and modify the `experiences` array:
 
 ```typescript
 {
@@ -82,7 +95,7 @@ The Experience component will automatically display your updates.
 
 ### Customize Your Hero Section
 
-Edit `app/components/welcome/welcome.tsx`:
+Edit `app/components/sections/hero.tsx`:
 - Update your name, title, and bio text
 - Change social media links (GitHub, LinkedIn URLs)
 - Modify styling with Tailwind classes
@@ -95,7 +108,7 @@ Edit `tailwind.config.ts` to extend the theme:
 
 ### Update Metadata
 
-Edit `app/layout.tsx` to change page title and description:
+Edit `app/layout.tsx` to change page title and description.
 ```typescript
 export const metadata: Metadata = {
   title: "Your Name - Portfolio",

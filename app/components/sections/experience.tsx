@@ -1,5 +1,5 @@
-import { experiences } from "@/app/data/experiences";
-import Line from "../line/line";
+import { experiences } from "@/lib/data";
+import Line from "../ui/line";
 
 export default function Experience() {
   return (
