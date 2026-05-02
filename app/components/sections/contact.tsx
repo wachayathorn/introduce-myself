@@ -9,6 +9,7 @@ export default function Contact() {
     lastname: "",
     email: "",
     message: "",
+    website: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<
@@ -44,7 +45,13 @@ export default function Contact() {
       }
 
       setSubmitStatus("success");
-      setFormData({ firstname: "", lastname: "", email: "", message: "" });
+      setFormData({
+        firstname: "",
+        lastname: "",
+        email: "",
+        message: "",
+        website: "",
+      });
       setTimeout(() => setSubmitStatus("idle"), 3000);
     } catch {
       setSubmitStatus("error");
@@ -74,6 +81,19 @@ export default function Contact() {
           onSubmit={handleSubmit}
           className="premium-card mx-auto w-full max-w-2xl rounded-3xl p-8 md:p-12 space-y-6 animate-soft-scale animation-delay-400"
         >
+          <div className="hidden" aria-hidden="true">
+            <label htmlFor="website">Website</label>
+            <input
+              id="website"
+              type="text"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+              value={formData.website}
+              onChange={handleChange}
+            />
+          </div>
+
           {/* Name Row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
