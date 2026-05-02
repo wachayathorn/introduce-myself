@@ -31,8 +31,18 @@ export default function Contact() {
     setSubmitStatus("idle");
 
     try {
-      // TODO: Add API endpoint for form submission
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit contact form");
+      }
+
       setSubmitStatus("success");
       setFormData({ firstname: "", lastname: "", email: "", message: "" });
       setTimeout(() => setSubmitStatus("idle"), 3000);
