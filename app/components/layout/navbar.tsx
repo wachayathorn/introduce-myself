@@ -25,54 +25,59 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="sticky top-0 w-full bg-white-off border-b border-gray-light">
-      <nav className="container mx-auto max-w-7xl h-auto p-5 flex flex-col items-center md:flex-row md:justify-center">
+    <div className="sticky top-0 z-50 w-full border-b border-gray-light bg-white-off/85 backdrop-blur-xl">
+      <nav className="container mx-auto max-w-6xl h-auto px-6 py-5 flex flex-col items-center md:flex-row md:justify-center">
         {!isHidden ? (
-          <ul className="flex flex-col md:flex-row">
-            <li className="mx-10 text-center">
+          <ul className="flex flex-col gap-4 md:flex-row md:gap-10">
+            <li className="text-center">
               <a
                 href="#home"
-                className="cursor-pointer text-black hover:text-gray-muted transition-colors duration-200"
+                className="group relative cursor-pointer text-xs font-semibold tracking-[0.18em] text-black transition-colors duration-200 hover:text-gray-muted"
               >
                 HOME
+                <span className="absolute -bottom-2 left-0 h-px w-0 bg-black transition-all duration-300 group-hover:w-full" />
               </a>
             </li>
-            <li className="mx-10 text-center">
+            <li className="text-center">
               <a
                 href="#experience"
-                className="cursor-pointer text-black hover:text-gray-muted transition-colors duration-200"
+                className="group relative cursor-pointer text-xs font-semibold tracking-[0.18em] text-black transition-colors duration-200 hover:text-gray-muted"
               >
                 EXPERIENCE
+                <span className="absolute -bottom-2 left-0 h-px w-0 bg-black transition-all duration-300 group-hover:w-full" />
               </a>
             </li>
-            <li className="mx-10 text-center">
+            <li className="text-center">
               <a
                 href="#stack"
-                className="cursor-pointer text-black hover:text-gray-muted transition-colors duration-200"
+                className="group relative cursor-pointer text-xs font-semibold tracking-[0.18em] text-black transition-colors duration-200 hover:text-gray-muted"
               >
                 STACK
+                <span className="absolute -bottom-2 left-0 h-px w-0 bg-black transition-all duration-300 group-hover:w-full" />
               </a>
             </li>
-            <li className="mx-10 text-center">
+            <li className="text-center">
               <a
                 href="#education"
-                className="cursor-pointer text-black hover:text-gray-muted transition-colors duration-200"
+                className="group relative cursor-pointer text-xs font-semibold tracking-[0.18em] text-black transition-colors duration-200 hover:text-gray-muted"
               >
                 EDUCATION
+                <span className="absolute -bottom-2 left-0 h-px w-0 bg-black transition-all duration-300 group-hover:w-full" />
               </a>
             </li>
-            <li className="mx-10 text-center">
+            <li className="text-center">
               <a
                 href="#contact"
-                className="cursor-pointer text-black hover:text-gray-muted transition-colors duration-200"
+                className="group relative cursor-pointer text-xs font-semibold tracking-[0.18em] text-black transition-colors duration-200 hover:text-gray-muted"
               >
                 CONTACT
+                <span className="absolute -bottom-2 left-0 h-px w-0 bg-black transition-all duration-300 group-hover:w-full" />
               </a>
             </li>
             {!isHidden && (
-              <li className="mx-10 text-center md:hidden">
+              <li className="text-center md:hidden">
                 <a
-                  className="cursor-pointer text-black hover:text-gray-muted transition-colors duration-200"
+                  className="cursor-pointer text-xs font-semibold tracking-[0.18em] text-black hover:text-gray-muted transition-colors duration-200"
                   onClick={() => setIsHidden(true)}
                 >
                   ...

@@ -47,19 +47,22 @@ export default function Contact() {
   return (
     <div
       id="contact"
-      className="flex min-h-screen snap-start grow items-center justify-center bg-white-off"
+      className="premium-surface flex min-h-screen snap-start grow items-center justify-center"
     >
-      <div className="container mx-auto max-w-7xl h-auto p-5 flex flex-col items-center justify-center">
-        <h1 className="text-3xl md:text-4xl font-bold p-5 text-center text-black">
+      <div className="container mx-auto max-w-6xl h-auto px-6 py-20 flex flex-col items-center justify-center">
+        <span className="animate-reveal-up text-xs font-semibold uppercase tracking-[0.24em] text-gray-muted">
+          Contact
+        </span>
+        <h1 className="mt-4 text-4xl md:text-6xl font-bold leading-none tracking-[-0.05em] text-center text-black animate-reveal-up animation-delay-200">
           Get In Touch
         </h1>
-        <p className="text-gray-muted font-medium text-center mb-10 max-w-md">
+        <p className="mt-5 text-gray-muted font-medium text-center mb-10 max-w-md leading-7 animate-reveal-up animation-delay-300">
           Have a question or want to work together ?
         </p>
 
         <form
           onSubmit={handleSubmit}
-          className="mx-auto max-w-2xl bg-white border border-gray-light shadow-md rounded-2xl p-8 md:p-12 space-y-6"
+          className="premium-card mx-auto w-full max-w-2xl rounded-3xl p-8 md:p-12 space-y-6 animate-soft-scale animation-delay-400"
         >
           {/* Name Row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -73,7 +76,7 @@ export default function Contact() {
                 value={formData.firstname}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-light rounded-xl focus:border-black focus:outline-none transition-colors bg-white-off hover:bg-white"
+                className="w-full px-4 py-3 border border-gray-light rounded-2xl focus:border-black focus:outline-none focus:ring-4 focus:ring-black/5 transition-all bg-white-off hover:bg-white"
               />
             </div>
             <div>
@@ -86,7 +89,7 @@ export default function Contact() {
                 value={formData.lastname}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-light rounded-xl focus:border-black focus:outline-none transition-colors bg-white-off hover:bg-white"
+                className="w-full px-4 py-3 border border-gray-light rounded-2xl focus:border-black focus:outline-none focus:ring-4 focus:ring-black/5 transition-all bg-white-off hover:bg-white"
               />
             </div>
           </div>
@@ -102,7 +105,7 @@ export default function Contact() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-gray-light rounded-xl focus:border-black focus:outline-none transition-colors bg-white-off hover:bg-white"
+              className="w-full px-4 py-3 border border-gray-light rounded-2xl focus:border-black focus:outline-none focus:ring-4 focus:ring-black/5 transition-all bg-white-off hover:bg-white"
             />
           </div>
 
@@ -117,18 +120,18 @@ export default function Contact() {
               onChange={handleChange}
               required
               rows={5}
-              className="w-full px-4 py-3 border border-gray-light rounded-xl focus:border-black focus:outline-none transition-colors bg-white-off hover:bg-white resize-none"
+              className="w-full px-4 py-3 border border-gray-light rounded-2xl focus:border-black focus:outline-none focus:ring-4 focus:ring-black/5 transition-all bg-white-off hover:bg-white resize-none"
             />
           </div>
 
           {/* Status Messages */}
           {submitStatus === "success" && (
-            <div className="p-4 bg-green-50 border border-green-300 rounded-xl text-green-700 font-medium">
+            <div className="animate-soft-scale p-4 bg-green-50 border border-green-300 rounded-2xl text-green-700 font-medium">
               ✓ Message sent successfully! I'll get back to you soon.
             </div>
           )}
           {submitStatus === "error" && (
-            <div className="p-4 bg-red-50 border border-red-300 rounded-xl text-red-700 font-medium">
+            <div className="animate-soft-scale p-4 bg-red-50 border border-red-300 rounded-2xl text-red-700 font-medium">
               ✗ Something went wrong. Please try again.
             </div>
           )}
@@ -137,7 +140,7 @@ export default function Contact() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-black text-white font-semibold py-3 px-6 rounded-xl hover:bg-white hover:text-black hover:shadow-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-black text-white font-semibold py-3 px-6 rounded-full hover:-translate-y-1 hover:bg-black-dark hover:shadow-xl transition-all duration-300 disabled:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? "Sending..." : "Send"}
           </button>

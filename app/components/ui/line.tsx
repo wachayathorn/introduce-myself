@@ -1,3 +1,5 @@
 export default function Line() {
-  return <div className="w-full h-px bg-gray-light my-16"></div>;
+  return (
+    <div className="my-16 h-px w-full bg-gradient-to-r from-transparent via-gray-light to-transparent" />
+  );
 }
