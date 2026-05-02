@@ -32,46 +32,46 @@ export default function Navbar() {
             <li className="text-center">
               <a
                 href="#home"
-                className="group relative cursor-pointer text-xs font-semibold tracking-[0.18em] text-black transition-colors duration-200 hover:text-gray-muted"
+                className="group relative cursor-pointer text-xs font-semibold tracking-[0.18em] text-black transition-colors duration-200 hover:text-blue-600"
               >
                 HOME
-                <span className="absolute -bottom-2 left-0 h-px w-0 bg-black transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-2 left-0 h-px w-0 bg-blue-500 transition-all duration-300 group-hover:w-full" />
               </a>
             </li>
             <li className="text-center">
               <a
                 href="#experience"
-                className="group relative cursor-pointer text-xs font-semibold tracking-[0.18em] text-black transition-colors duration-200 hover:text-gray-muted"
+                className="group relative cursor-pointer text-xs font-semibold tracking-[0.18em] text-black transition-colors duration-200 hover:text-blue-600"
               >
                 EXPERIENCE
-                <span className="absolute -bottom-2 left-0 h-px w-0 bg-black transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-2 left-0 h-px w-0 bg-blue-500 transition-all duration-300 group-hover:w-full" />
               </a>
             </li>
             <li className="text-center">
               <a
                 href="#stack"
-                className="group relative cursor-pointer text-xs font-semibold tracking-[0.18em] text-black transition-colors duration-200 hover:text-gray-muted"
+                className="group relative cursor-pointer text-xs font-semibold tracking-[0.18em] text-black transition-colors duration-200 hover:text-blue-600"
               >
                 STACK
-                <span className="absolute -bottom-2 left-0 h-px w-0 bg-black transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-2 left-0 h-px w-0 bg-blue-500 transition-all duration-300 group-hover:w-full" />
               </a>
             </li>
             <li className="text-center">
               <a
                 href="#education"
-                className="group relative cursor-pointer text-xs font-semibold tracking-[0.18em] text-black transition-colors duration-200 hover:text-gray-muted"
+                className="group relative cursor-pointer text-xs font-semibold tracking-[0.18em] text-black transition-colors duration-200 hover:text-blue-600"
               >
                 EDUCATION
-                <span className="absolute -bottom-2 left-0 h-px w-0 bg-black transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-2 left-0 h-px w-0 bg-blue-500 transition-all duration-300 group-hover:w-full" />
               </a>
             </li>
             <li className="text-center">
               <a
                 href="#contact"
-                className="group relative cursor-pointer text-xs font-semibold tracking-[0.18em] text-black transition-colors duration-200 hover:text-gray-muted"
+                className="group relative cursor-pointer text-xs font-semibold tracking-[0.18em] text-black transition-colors duration-200 hover:text-blue-600"
               >
                 CONTACT
-                <span className="absolute -bottom-2 left-0 h-px w-0 bg-black transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-2 left-0 h-px w-0 bg-blue-500 transition-all duration-300 group-hover:w-full" />
               </a>
             </li>
             {!isHidden && (

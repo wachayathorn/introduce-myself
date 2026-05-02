@@ -35,7 +35,7 @@ export default function Stack() {
                 {stackCategory.icons.map((icon, index) => (
                   <li
                     key={index}
-                    className="p-3 rounded-2xl border border-transparent bg-white-off hover:border-gray-light hover:bg-white hover:scale-105 hover:shadow-sm transition-all duration-300 flex flex-col items-center"
+                    className="p-3 rounded-2xl border border-transparent bg-white-off hover:border-blue-500 hover:bg-white hover:scale-105 hover:shadow-sm transition-all duration-300 flex flex-col items-center"
                   >
                     <img src={icon} className="w-10 h-10 md:w-12 md:h-12 m-2" />
                   </li>
