@@ -18,9 +18,13 @@ export default function Education() {
           <a
             href="https://www.rmutt.ac.th/"
             target="_blank"
-            className="flex h-28 w-28 items-center justify-center rounded-3xl border border-gray-light bg-white-off transition-transform duration-300 hover:scale-105"
+            className="flex h-32 w-32 items-center justify-center overflow-hidden rounded-3xl border border-gray-light bg-white-off p-5 transition-transform duration-300 hover:scale-105"
           >
-            <img src="/rmutt.png" width={80} height={96} />
+            <img
+              src="/rmutt.png"
+              alt="Rajamangala University of Technology Thanyaburi logo"
+              className="h-20 w-auto object-contain"
+            />
           </a>
           <h2 className="mt-8 text-2xl md:text-3xl font-semibold text-black">
             {education.degree}
