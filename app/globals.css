@@ -1,15 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300..800&family=JetBrains+Mono:wght@400..700&display=swap");
 @import "tailwindcss";
 
-/* ===========================
-   Deep Tech Blue Theme Colors
-   =========================== */
+@theme {
+  --color-black: #0a0a0a;
+  --color-black-dark: #000000;
+  --color-gray-medium: #2a2a2a;
+  --color-gray-light: #e6e6e6;
+  --color-gray-muted: #5c5c5c;
+  --color-gray-cool: #8a8a8a;
+  --color-white: #ffffff;
+  --color-white-off: #ffffff;
+  --color-accent: #e11d2e;
+}
 
-:root {
-  --tech-blue-primary: #3B82F6;
-  --tech-blue-secondary: #6366F1;
-  --tech-blue-highlight: #06B6D4;
-  --tech-blue-dark: #1E40AF;
+html {
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 5rem;
 }
 
 /* ===========================
@@ -204,17 +210,82 @@
   opacity: 0;
 }
 
+.hero-mask {
+  display: block;
+  overflow: hidden;
+}
+
+.hero-mask > span {
+  display: block;
+  animation: hero-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-mask-delay > span {
+  animation-delay: 0.14s;
+}
+
+.hero-line {
+  margin-top: 1.75rem;
+  height: 3px;
+  width: 4.5rem;
+  background: #e11d2e;
+  transform-origin: center;
+  animation: hero-draw 0.7s 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.reveal-in {
+  animation: reveal-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.reveal-in .pop-in {
+  animation: soft-scale 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes hero-rise {
+  from {
+    transform: translateY(110%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-mask > span,
+  .hero-line,
+  .reveal,
+  .pop-in,
+  .animation-delay-200,
+  .animation-delay-300,
+  .animation-delay-400,
+  .animation-delay-500,
+  .animation-delay-600,
+  .animation-delay-800 {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 .premium-surface {
   background:
-    radial-gradient(circle at top left, rgba(10, 10, 10, 0.06), transparent 28rem),
-    radial-gradient(circle at bottom right, rgba(45, 45, 45, 0.05), transparent 24rem),
-    #fafafa;
+    radial-gradient(circle at top right, rgba(225, 29, 46, 0.07), transparent 22rem),
+    #ffffff;
 }
 
 .premium-card {
-  border: 1px solid #e5e5e5;
-  background: rgba(255, 255, 255, 0.86);
-  box-shadow: 0 20px 70px rgba(10, 10, 10, 0.06);
+  border: 1px solid #e6e6e6;
+  background: #ffffff;
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.06);
   backdrop-filter: blur(16px);
 }
 
@@ -228,37 +299,5 @@
 
 .premium-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 28px 80px rgba(10, 10, 10, 0.1);
-}
-
-/* Deep Tech Blue Gradient Text */
-.gradient-text-blue {
-  background: linear-gradient(135deg, var(--tech-blue-primary), var(--tech-blue-secondary), var(--tech-blue-highlight));
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradient-text 7s ease infinite;
-}
-
-/* Deep Tech Blue Button Hover */
-.btn-tech-blue:hover {
-  background: linear-gradient(135deg, var(--tech-blue-primary), var(--tech-blue-secondary));
-  color: white;
-}
-
-/* Deep Tech Blue Icon Accent */
-.icon-tech-blue:hover {
-  color: var(--tech-blue-primary);
-  transform: scale(1.1);
-}
-
-/* Deep Tech Blue Link Accent */
-.link-tech-blue:hover {
-  color: var(--tech-blue-primary);
-}
-
-/* Deep Tech Blue Border Accent */
-.border-tech-blue:hover {
-  border-color: var(--tech-blue-primary);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.1);
 }

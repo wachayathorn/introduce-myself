@@ -1,5 +1,6 @@
-import { stacks } from "@/lib/data";
+import { currentTools, stacks } from "@/lib/data";
 import Line from "../ui/line";
+import Reveal from "../ui/reveal";
 
 export default function Stack() {
   return (
@@ -14,20 +15,29 @@ export default function Stack() {
             Tech stack I have experience in
           </span>
         </h1>
-        <div className="mt-12 grid w-full grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <Reveal className="mt-12 w-full">
+        <div className="premium-card flex w-full flex-col items-center rounded-3xl px-6 py-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">
+            Now
+          </p>
+          <ul className="mt-6 flex flex-wrap items-center justify-center gap-4">
+            {currentTools.map((tool, index) => (
+              <li
+                key={tool.name}
+                className="pop-in flex min-w-28 flex-col items-center rounded-2xl border border-gray-light bg-white-off px-5 py-4"
+                style={{ animationDelay: `${index * 120}ms` }}
+              >
+                <img src={tool.icon} alt={tool.name} className="h-12 w-12" />
+                <span className="mt-3 text-sm font-semibold text-black">{tool.name}</span>
+              </li>
+            ))}
+            </ul>
+        </div>
+        </Reveal>
+        <div className="mt-5 grid w-full grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
           {stacks.map((stackCategory, categoryIndex) => (
-            <div
-              key={stackCategory.title}
-              className={`premium-card premium-hover flex flex-col items-center rounded-2xl p-6 animate-soft-scale ${
-                categoryIndex === 0
-                  ? "animation-delay-300"
-                  : categoryIndex === 1
-                    ? "animation-delay-400"
-                    : categoryIndex === 2
-                      ? "animation-delay-500"
-                      : "animation-delay-600"
-              }`}
-            >
+            <Reveal key={stackCategory.title} delay={categoryIndex * 100}>
+            <div className="premium-card premium-hover flex h-full flex-col items-center rounded-2xl p-6">
               <div className="font-bold text-xl md:text-2xl pb-5 text-black">
                 {stackCategory.title}
               </div>
@@ -35,13 +45,14 @@ export default function Stack() {
                 {stackCategory.icons.map((icon, index) => (
                   <li
                     key={index}
-                    className="p-3 rounded-2xl border border-transparent bg-white-off hover:border-blue-500 hover:bg-white hover:scale-105 hover:shadow-sm transition-all duration-300 flex flex-col items-center"
+                    className="p-3 rounded-2xl border border-transparent bg-white-off hover:border-accent hover:bg-white hover:scale-105 hover:shadow-sm transition-all duration-300 flex flex-col items-center"
                   >
                     <img src={icon} className="w-10 h-10 md:w-12 md:h-12 m-2" />
                   </li>
                 ))}
               </ul>
             </div>
+            </Reveal>
           ))}
         </div>
         <Line />

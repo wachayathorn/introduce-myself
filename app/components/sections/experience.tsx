@@ -1,45 +1,63 @@
 import { experiences } from "@/lib/data";
 import Line from "../ui/line";
+import Reveal from "../ui/reveal";
 
 export default function Experience() {
+  const current = experiences.find((experience) => experience.current);
+  const previous = experiences.filter((experience) => !experience.current);
+
   return (
-    <div id="experience" className="flex min-h-screen snap-start grow items-center bg-white">
-      <div className="container flex flex-col mx-auto max-w-6xl px-6 py-20">
-        <div className="gap-12 flex flex-col md:flex-row md:items-start">
-          <div className="md:w-5/12 flex flex-col text-center md:text-left">
-            <span className="animate-reveal-up text-xs font-semibold uppercase tracking-[0.24em] text-gray-muted">
-              Career Timeline
+    <div id="experience" className="flex min-h-screen snap-start grow items-center bg-white-off">
+      <div className="container mx-auto flex max-w-6xl flex-col px-6 py-20">
+        <div className="flex flex-col gap-12 md:flex-row md:items-stretch">
+          <div className="flex flex-col md:w-5/12">
+            <span className="animate-reveal-up text-xs font-semibold uppercase tracking-[0.24em] text-accent">
+              Now
             </span>
-            <h1 className="mt-4 text-4xl md:text-6xl font-bold leading-none tracking-[-0.05em] animate-reveal-up animation-delay-200">
-              <span>5 YEARS OF</span> <br />
-              <span className="text-gray-muted">EXPERIENCE</span>
-            </h1>
-            <p className="mt-6 max-w-sm text-gray-muted leading-7 animate-reveal-up animation-delay-300">
-              Building backend systems, APIs, and cloud-native services with a focus on reliability and scale.
-            </p>
-          </div>
-          <div className="md:w-7/12 flex flex-col gap-6 text-center md:text-left">
-            {experiences.map((experience, index) => (
-              <div
-                key={experience.id}
-                className={`premium-card premium-hover flex flex-col p-7 rounded-2xl animate-soft-scale ${
-                  index === 0 ? "animation-delay-300" : "animation-delay-500"
-                }`}
-              >
-                <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-                  <div>
-                    <h2 className="text-2xl font-semibold text-black">{experience.title}</h2>
-                    <h3 className="mt-1 text-lg font-medium text-black">{experience.company}</h3>
-                  </div>
-                  <span className="inline-flex w-fit rounded-full border border-gray-light bg-white-off px-4 py-2 text-xs font-semibold text-gray-muted">
-                    {experience.period}
-                  </span>
-                </div>
-                <p className="text-gray-muted mt-5">
-                  {experience.location}
+            <Reveal className="mt-6 flex flex-1" delay={80}>
+            <div className="premium-hover flex w-full flex-1 flex-col justify-between rounded-3xl border-t-4 border-accent bg-black p-8 text-white">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/50">
+                  Current role
                 </p>
+                <h1 className="mt-4 text-4xl font-bold leading-none tracking-[-0.05em] md:text-5xl">
+                  {current?.title}
+                </h1>
+                <h2 className="mt-4 text-xl font-medium text-white/80">
+                  {current?.company}
+                </h2>
+                {current?.team ? (
+                  <p className="mt-2 text-base text-white/60">{current.team}</p>
+                ) : null}
               </div>
-            ))}
+              <div className="mt-10 flex flex-col gap-2 text-sm text-white/60">
+                <span>{current?.period}</span>
+                <span>{current?.location}</span>
+              </div>
+            </div>
+            </Reveal>
+          </div>
+
+          <div className="flex flex-col md:w-7/12">
+            <span className="animate-reveal-up text-xs font-semibold uppercase tracking-[0.24em] text-gray-muted">
+              Before
+            </span>
+            <div className="mt-6 flex flex-col border-l border-gray-light pl-8">
+              {previous.map((experience, index) => (
+                <Reveal key={experience.id} delay={index * 120}>
+                <div className="relative pb-8 last:pb-0">
+                  <span className="absolute -left-[39px] top-1.5 h-3 w-3 rounded-full border-2 border-white bg-accent" />
+                  <h2 className="text-xl font-semibold text-black">{experience.title}</h2>
+                  <h3 className="mt-1 text-base font-medium text-black">{experience.company}</h3>
+                  <p className="mt-2 text-sm text-gray-muted">
+                    {experience.period}
+                    <span className="px-2">·</span>
+                    {experience.location}
+                  </p>
+                </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
         <Line />

@@ -6,7 +6,7 @@ import Welcome from "@/app/components/sections/hero";
 
 export default function Home() {
   return (
-    <div className="snap-y snap-mandatory overflow-y-scroll h-screen">
+    <div>
       <Welcome />
       <Experience />
       <Stack />

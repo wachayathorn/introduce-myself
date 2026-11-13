@@ -4,6 +4,8 @@ export interface Experience {
   company: string;
   period: string;
   location: string;
+  team?: string;
+  current?: boolean;
 }
 
 export interface Education {

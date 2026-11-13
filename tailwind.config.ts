@@ -10,18 +10,19 @@ const config: Config = {
       colors: {
         black: {
           DEFAULT: "#0A0A0A",
-          dark: "#1A1A1A",
+          dark: "#000000",
         },
         gray: {
-          medium: "#2D2D2D",
-          light: "#E5E5E5",
-          muted: "#64748B",
-          cool: "#94A3B8",
+          medium: "#2A2A2A",
+          light: "#E6E6E6",
+          muted: "#5C5C5C",
+          cool: "#8A8A8A",
         },
         white: {
           DEFAULT: "#FFFFFF",
-          off: "#FAFAFA",
+          off: "#FFFFFF",
         },
+        accent: "#E11D2E",
       },
     },
   },

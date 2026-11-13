@@ -3,8 +3,9 @@ import "./globals.css";
 import Navbar from "./components/layout/navbar";
 
 export const metadata: Metadata = {
-  title: "Introduce myself",
-  description: "Let's me introduce myself",
+  title: "Wachayathorn Singsena · Senior Engineer",
+  description:
+    "Senior Engineer on the Virtual Bank team at Ascend Money. Kotlin, Spring Boot, and AWS.",
 };
 
 export default function RootLayout({

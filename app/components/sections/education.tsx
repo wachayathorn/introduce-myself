@@ -1,11 +1,12 @@
 import { education } from "@/lib/data";
 import Line from "../ui/line";
+import Reveal from "../ui/reveal";
 
 export default function Education() {
   return (
     <div
       id="education"
-      className="flex min-h-screen snap-start grow items-center bg-white"
+      className="flex min-h-screen snap-start grow items-center bg-white-off"
     >
       <div className="container mx-auto max-w-6xl h-auto px-6 py-20 flex flex-col items-center justify-center">
         <span className="animate-reveal-up text-xs font-semibold uppercase tracking-[0.24em] text-gray-muted">
@@ -14,7 +15,8 @@ export default function Education() {
         <h1 className="mt-4 text-4xl md:text-6xl font-bold leading-none tracking-[-0.05em] text-center text-black animate-reveal-up animation-delay-200">
           Education
         </h1>
-        <div className="premium-card premium-hover mt-12 flex w-full max-w-3xl flex-col items-center rounded-3xl p-8 text-center animate-soft-scale animation-delay-300">
+        <Reveal className="mt-12 w-full max-w-3xl">
+        <div className="premium-card premium-hover flex w-full flex-col items-center rounded-3xl p-8 text-center">
           <a
             href="https://www.rmutt.ac.th/"
             target="_blank"
@@ -38,6 +40,7 @@ export default function Education() {
             <span>{education.location}</span>
           </p>
         </div>
+        </Reveal>
         <Line />
       </div>
     </div>

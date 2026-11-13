@@ -3,9 +3,18 @@ import type { Experience, Education, Stack, Project } from "@/types";
 export const experiences: Experience[] = [
   {
     id: 1,
-    title: "Software Engineer",
-    company: "MAKE by KBank - KBTG",
-    period: "03/2022 - Ongoing",
+    title: "Senior Engineer",
+    company: "Ascend Money",
+    period: "11/2026 - Present",
+    location: "Thailand",
+    team: "Virtual Bank",
+    current: true,
+  },
+  {
+    id: 2,
+    title: "Innovation Engineer",
+    company: "KBTG",
+    period: "04/2022 - 10/2026",
     location: "Nonthaburi, Thailand",
   },
   {
@@ -14,6 +23,13 @@ export const experiences: Experience[] = [
     company: "RV Connex Co., Ltd",
     period: "07/2020 - 02/2022",
     location: "Pathum Thani, Thailand",
+  },
+  {
+    id: 4,
+    title: "Backend Developer",
+    company: "Bluewind Solution",
+    period: "06/2019 - 10/2019",
+    location: "Thailand",
   },
 ];
 
@@ -31,6 +47,21 @@ export const education: Education = {
   highlights: [],
 };
 
+export const currentTools = [
+  {
+    name: "Kotlin",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg",
+  },
+  {
+    name: "Spring Boot",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg",
+  },
+  {
+    name: "AWS",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original.svg",
+  },
+];
+
 export const stacks: Stack[] = [
   {
     title: "Frontend",
@@ -46,6 +77,8 @@ export const stacks: Stack[] = [
   {
     title: "Backend",
     icons: [
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg",
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg",
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grpc/grpc-plain.svg",
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
@@ -68,6 +101,7 @@ export const stacks: Stack[] = [
   {
     title: "Cloud",
     icons: [
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original.svg",
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg",
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg",
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",

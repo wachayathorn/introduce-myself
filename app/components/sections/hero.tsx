@@ -8,37 +8,34 @@ export default function Welcome() {
       className="premium-surface relative flex min-h-screen snap-start grow items-center justify-center overflow-hidden"
     >
       {/* Floating Decorative Elements */}
-      <div className="absolute top-24 left-10 w-28 h-28 bg-gradient-to-br from-blue-500/10 to-transparent rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-24 right-10 w-36 h-36 bg-gradient-to-br from-indigo-500/10 to-transparent rounded-full blur-3xl animate-float-delayed" />
+      <div className="absolute top-24 left-10 w-28 h-28 bg-gradient-to-br from-accent/15 to-transparent rounded-full blur-3xl animate-float" />
+      <div className="absolute bottom-24 right-10 w-36 h-36 bg-gradient-to-br from-accent/10 to-transparent rounded-full blur-3xl animate-float-delayed" />
 
       <div className="container mx-auto max-w-6xl h-auto p-6 flex flex-col text-center items-center relative z-10">
-        <span className="animate-reveal-up inline-flex items-center rounded-full border border-gray-light bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-gray-muted shadow-sm">
-          Backend-focused Software Engineer
+        <span className="animate-reveal-up inline-flex items-center rounded-full border border-accent bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-accent">
+          Now · Virtual Bank at Ascend Money
         </span>
         {/* Name with Animated Gradient */}
-        <h1 className="mt-8 font-bold text-4xl sm:text-6xl md:text-8xl leading-none tracking-[-0.06em] animate-fade-in-up animation-delay-200">
-          <span className="gradient-text-blue inline-block">
-            WACHAYATHORN
+        <h1 className="mt-8 font-bold text-4xl sm:text-6xl md:text-8xl leading-[0.9] tracking-[-0.06em] text-black">
+          <span className="hero-mask block overflow-hidden">
+            <span className="block">WACHAYATHORN</span>
           </span>
-          <span className="text-gray-muted">
-            {" "}
-            SINGSENA
+          <span className="hero-mask hero-mask-delay block overflow-hidden">
+            <span className="block">SINGSENA</span>
           </span>
         </h1>
+        <div className="hero-line mx-auto mt-7 h-[3px] w-18 bg-accent" />
 
         {/* Job Title */}
         <h2 className="text-xl font-semibold pt-6 animate-fade-in-up animation-delay-300 text-black">
-          Software Engineer
+          Senior Engineer
         </h2>
 
         {/* Description */}
         <p className="text-gray-muted font-medium pt-4 max-w-3xl animate-fade-in-up animation-delay-400 leading-8">
-          With 5+ years of experience, specializing in building scalable
-          microservices and high-performance APIs. <br />
-          Skilled in concurrency, distributed systems, and optimizing backend
-          architectures for reliability. <br />
-          Experienced in API design, database design, message queues, and
-          cloud-native infrastructure.
+          Senior Engineer on the Virtual Bank team at Ascend Money. <br />
+          I work with Kotlin, Spring Boot, and AWS. 6+ years building scalable
+          microservices and high-performance APIs.
         </p>
 
         {/* Social Buttons with Enhanced Hover */}
@@ -46,7 +43,7 @@ export default function Welcome() {
           <a
             href="https://github.com/wachayathorn"
             target="_blank"
-            className="group bg-black flex flex-row h-auto w-auto gap-2 px-6 py-3 rounded-full items-center text-white transition-all duration-300 hover:-translate-y-1 hover:bg-blue-600 hover:shadow-xl"
+            className="group bg-black flex flex-row h-auto w-auto gap-2 px-6 py-3 rounded-full items-center text-white transition-all duration-300 hover:-translate-y-1 hover:bg-accent hover:shadow-xl"
           >
             <FaGithub className="transition-transform duration-300 group-hover:rotate-12" />
             Github
@@ -54,7 +51,7 @@ export default function Welcome() {
           <a
             href="https://linkedin.com/in/wachayathorn"
             target="_blank"
-            className="group flex flex-row h-auto gap-2 px-6 py-3 rounded-full items-center border border-gray-light bg-white/70 text-black transition-all duration-300 hover:-translate-y-1 hover:border-blue-500 hover:text-blue-600 hover:shadow-xl"
+            className="group flex flex-row h-auto gap-2 px-6 py-3 rounded-full items-center border border-gray-light bg-white/70 text-black transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:text-accent hover:shadow-xl"
           >
             <FaLinkedin className="transition-transform duration-300 group-hover:rotate-12" />
             LinkedIn
