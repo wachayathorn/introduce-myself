@@ -3,7 +3,7 @@ import "./globals.css";
 import Footer from "./components/layout/footer";
 
 export const metadata: Metadata = {
-  title: "Wachayathorn Singsena · Senior Software Engineer",
+  title: "Wachayathorn Singsena",
   description:
     "Senior Software Engineer focused on backend microservices. Kotlin and Spring Boot. Virtual Bank at Ascend Money.",
 };
