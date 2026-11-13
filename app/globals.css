@@ -256,6 +256,18 @@ html {
   box-shadow: 0 28px 50px rgba(17, 20, 24, 0.1);
 }
 
+.lazy-show.topic.is-shown:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+#stack .rounded-2xl.border:hover,
+#experience .rounded-2xl.border:hover,
+#education .rounded-2xl.border:hover,
+#contact .rounded-xl.border:hover {
+  border-color: #111418;
+}
+
 .hover-pop {
   transition:
     transform 0.5s cubic-bezier(0.34, 1.4, 0.64, 1),
@@ -281,6 +293,7 @@ html {
 @media (prefers-reduced-motion: reduce) {
   .lazy-show,
   .lazy-show.is-shown:hover,
+  .lazy-show.topic.is-shown:hover,
   .hover-pop:hover,
   .hover-line:hover {
     opacity: 1;

@@ -50,24 +50,25 @@ export default function Contact() {
   return (
     <section id="contact" className="bg-[#f3f4f5] px-4 py-20 md:px-10 lg:px-16">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 lg:grid-cols-12">
-        <Reveal className="rounded-2xl border border-[#E5E7EB] bg-white p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] lg:col-span-12">
+        <Reveal className="topic lg:col-span-12">
           <span className="rounded-full bg-white px-3 py-1 text-xs font-bold tracking-wider text-[#6C727F] uppercase shadow-sm">
             Contact
           </span>
           <h2 className="mt-3 text-4xl font-bold tracking-tight text-[#111418]">Get In Touch</h2>
           <p className="mt-2 text-lg font-semibold text-[#e11d2e]">
-            Have a question or want to work together?
+            Inquiries are welcome.
           </p>
           <p className="mt-4 text-[15px] leading-6 text-[#6C727F]">
-            Senior Software Engineer. I focus on backend microservices. Find me on GitHub and LinkedIn.
+            Professional profiles are available on GitHub and LinkedIn.
           </p>
           <div className="mt-8 space-y-4">
             <a
               href="https://github.com/wachayathorn"
               target="_blank"
               rel="noreferrer"
-              className="hover-pop flex items-center justify-between rounded-xl border border-[#E5E7EB] bg-white p-4 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:bg-black hover:text-white"
+              className="hover-pop flex items-center gap-4 rounded-xl border border-[#E5E7EB] bg-white p-4 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:bg-black hover:text-white"
             >
+              <img src="https://skillicons.dev/icons?i=github" alt="" className="h-10 w-10 rounded-lg bg-white" />
               <span>
                 <span className="block text-[11px] tracking-wider text-[#6C727F] uppercase">GitHub</span>
                 <span className="font-semibold">github.com/wachayathorn</span>
@@ -77,8 +78,9 @@ export default function Contact() {
               href="https://linkedin.com/in/wachayathorn"
               target="_blank"
               rel="noreferrer"
-              className="hover-pop flex items-center justify-between rounded-xl border border-[#E5E7EB] bg-white p-4 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:bg-black hover:text-white"
+              className="hover-pop flex items-center gap-4 rounded-xl border border-[#E5E7EB] bg-white p-4 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:bg-black hover:text-white"
             >
+              <img src="https://skillicons.dev/icons?i=linkedin" alt="" className="h-10 w-10 rounded-lg bg-white" />
               <span>
                 <span className="block text-[11px] tracking-wider text-[#6C727F] uppercase">LinkedIn</span>
                 <span className="font-semibold">linkedin.com/in/wachayathorn</span>
@@ -110,7 +112,7 @@ export default function Contact() {
             Message
             <textarea name="message" value={formData.message} onChange={handleChange} required rows={4} className="mt-2 w-full resize-none rounded-2xl bg-[#F3F4F6] px-4 py-3.5 text-[15px] outline-none focus:bg-white focus:shadow-[0_0_0_2px_rgba(0,0,0,0.8)]" />
           </label>
-          {submitStatus === "success" ? <p>Message sent successfully! I&apos;ll get back to you soon.</p> : null}
+          {submitStatus === "success" ? <p>Message sent successfully. A response will be provided shortly.</p> : null}
           {submitStatus === "error" ? <p>Something went wrong. Please try again.</p> : null}
           <button
             type="submit"

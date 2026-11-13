@@ -42,7 +42,7 @@ export const education: Education = {
   gpa: 3.44,
   location: "Pathum Thani, Thailand",
   achievements: [
-    "Senior Project - Develop full-stack web/mobile apps with Node.js/Express.js, deployed on Firebase Cloud Functions, using Firestore/Realtime DB.",
+    "Senior project: developed full-stack web and mobile applications with Node.js and Express.js, deployed on Firebase Cloud Functions, using Firestore and Realtime Database.",
   ],
   highlights: [],
 };

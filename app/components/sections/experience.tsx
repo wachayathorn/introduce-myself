@@ -8,17 +8,17 @@ export default function Experience() {
   return (
     <section id="experience" className="bg-[#f8f9fa] px-4 py-20 md:px-10 lg:px-16">
       <div className="mx-auto max-w-7xl">
-        <Reveal className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+        <Reveal className="topic mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <span className="rounded-full bg-[#F3F4F6] px-3 py-1 text-xs font-bold tracking-wider text-[#6C727F] uppercase">
               Career
             </span>
             <h2 className="mt-2 text-4xl font-bold tracking-tight text-[#111418]">
-              Now & Before
+              Professional Experience
             </h2>
           </div>
           <p className="max-w-md text-[15px] leading-6 text-[#6C727F]">
-            Backend microservices come first. I am a Senior Software Engineer on the Virtual Bank team at Ascend Money. Cloud is part of the work, not the main story.
+            Professional experience in backend microservices, currently with the Virtual Bank team at Ascend Money. Cloud infrastructure supports this work.
           </p>
         </Reveal>
 
@@ -39,10 +39,10 @@ export default function Experience() {
                   {current.team ? <span className="font-medium text-[#6C727F]"> · {current.team}</span> : null}
                 </p>
                 <p className="mt-6 text-base leading-7 text-[#6C727F]">
-                  I design backend microservices with Kotlin and Spring Boot. AWS is where they run.
+                  Designs backend microservices with Kotlin and Spring Boot. The services are deployed on AWS.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-2">
-                  {["Kotlin", "Spring Boot", "Microservices"].map((tool) => (
+                  {["Kotlin", "Spring Boot", "Microservices", "AWS"].map((tool) => (
                     <span key={tool} className="hover-pop rounded-full bg-[#F3F4F6] px-3.5 py-1.5 text-xs font-medium hover:bg-black hover:text-white">
                       {tool}
                     </span>
@@ -56,7 +56,7 @@ export default function Experience() {
           <div className="flex flex-col gap-4 lg:col-span-5">
             <div className="flex items-center gap-2">
               <span className="rounded-full bg-[#F3F4F6] px-3 py-1 text-xs font-bold tracking-wider text-[#6C727F] uppercase">
-                Before
+                Previous
               </span>
               <div className="h-px flex-1 bg-[#e7e8e9]" />
             </div>

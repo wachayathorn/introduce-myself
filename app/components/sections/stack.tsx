@@ -41,7 +41,7 @@ export default function Stack() {
   return (
     <section id="stack" className="bg-[#f3f4f5] px-4 py-20 md:px-10 lg:px-16">
       <div className="mx-auto max-w-7xl">
-        <Reveal className="mx-auto mb-10 max-w-2xl text-center">
+        <Reveal className="topic mx-auto mb-10 max-w-2xl text-center">
           <span className="rounded-full bg-white px-3 py-1 text-xs font-bold tracking-wider text-[#6C727F] uppercase shadow-sm">
             Stack
           </span>
@@ -49,22 +49,26 @@ export default function Stack() {
             Technologies I Work With
           </h2>
           <p className="mt-2 text-[15px] text-[#6C727F]">
-            Backend first. Kotlin and Spring Boot are my daily tools. Cloud tools support the services.
+            Backend technologies are the focus. Kotlin and Spring Boot are the primary tools. Cloud technologies support those services.
           </p>
         </Reveal>
 
         <Reveal delay={80} className="mb-6 flex flex-col items-start justify-between gap-6 rounded-2xl border border-[#E5E7EB] bg-white p-6 shadow-[0_8px_24px_rgba(0,0,0,0.04)] md:flex-row md:items-center md:p-8">
           <div>
             <div className="flex items-center gap-2">
-              <h3 className="text-lg font-semibold">Now · Daily Drivers</h3>
+              <h3 className="text-lg font-semibold">Current technologies</h3>
               <span className="h-2 w-2 animate-pulse rounded-full bg-[#e11d2e]" />
             </div>
             <p className="text-sm text-[#6C727F]">Virtual Bank at Ascend Money</p>
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-3">
             {currentTools.map((tool) => (
-              <span key={tool.name} className="hover-pop rounded-full bg-black px-4 py-2 text-xs font-semibold text-white hover:bg-[#2a2a2a]">
-                {tool.name}
+              <span
+                key={tool.name}
+                title={tool.name}
+                className="hover-pop flex h-12 w-12 items-center justify-center rounded-2xl border border-[#E5E7EB] bg-white"
+              >
+                <img src={tool.icon} alt={tool.name} className="h-8 w-8" />
               </span>
             ))}
           </div>
