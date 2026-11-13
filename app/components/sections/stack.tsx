@@ -53,7 +53,7 @@ export default function Stack() {
           </p>
         </Reveal>
 
-        <Reveal delay={80} className="mb-6 flex flex-col items-start justify-between gap-6 rounded-2xl bg-white p-6 shadow-[0_8px_24px_rgba(0,0,0,0.04)] md:flex-row md:items-center md:p-8">
+        <Reveal delay={80} className="mb-6 flex flex-col items-start justify-between gap-6 rounded-2xl border border-[#E5E7EB] bg-white p-6 shadow-[0_8px_24px_rgba(0,0,0,0.04)] md:flex-row md:items-center md:p-8">
           <div>
             <div className="flex items-center gap-2">
               <h3 className="text-lg font-semibold">Now · Daily Drivers</h3>
@@ -63,7 +63,7 @@ export default function Stack() {
           </div>
           <div className="flex flex-wrap gap-2">
             {currentTools.map((tool) => (
-              <span key={tool.name} className="rounded-full bg-black px-4 py-2 text-xs font-semibold text-white">
+              <span key={tool.name} className="hover-pop rounded-full bg-black px-4 py-2 text-xs font-semibold text-white hover:bg-[#2a2a2a]">
                 {tool.name}
               </span>
             ))}
@@ -72,11 +72,11 @@ export default function Stack() {
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           {stacks.map((group, index) => (
-            <Reveal key={group.title} delay={index * 70} className="rounded-2xl bg-white p-6 shadow-[0_4px_16px_rgba(0,0,0,0.03)]">
+            <Reveal key={group.title} delay={index * 70} className="rounded-2xl border border-[#E5E7EB] bg-white p-6 shadow-[0_4px_16px_rgba(0,0,0,0.03)]">
               <h3 className="mb-3 text-lg font-semibold">{group.title}</h3>
               <ul className="space-y-2.5 text-sm text-[#45474a]">
                 {group.icons.map((icon) => (
-                  <li key={icon} className="flex items-center gap-2">
+                  <li key={icon} className="hover-line flex items-center gap-2">
                     <span className="h-1.5 w-1.5 rounded-full bg-black" />
                     {toolName(icon)}
                   </li>

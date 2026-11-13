@@ -24,7 +24,7 @@ export default function Experience() {
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
           {current ? (
-            <Reveal className="flex flex-col justify-between rounded-2xl bg-white p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] md:p-10 lg:col-span-7">
+            <Reveal className="flex flex-col justify-between rounded-2xl border border-[#E5E7EB] bg-white p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] md:p-10 lg:col-span-7">
               <div>
                 <div className="mb-6 flex items-center justify-between gap-3">
                   <span className="inline-flex items-center gap-2 rounded-full bg-[#e11d2e] px-3 py-1 text-xs font-semibold text-white">
@@ -43,7 +43,7 @@ export default function Experience() {
                 </p>
                 <div className="mt-6 flex flex-wrap gap-2">
                   {["Kotlin", "Spring Boot", "Microservices"].map((tool) => (
-                    <span key={tool} className="rounded-full bg-[#F3F4F6] px-3.5 py-1.5 text-xs font-medium">
+                    <span key={tool} className="hover-pop rounded-full bg-[#F3F4F6] px-3.5 py-1.5 text-xs font-medium hover:bg-black hover:text-white">
                       {tool}
                     </span>
                   ))}
@@ -61,7 +61,7 @@ export default function Experience() {
               <div className="h-px flex-1 bg-[#e7e8e9]" />
             </div>
             {previous.map((job, index) => (
-              <Reveal key={job.id} delay={index * 80} className="rounded-2xl bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
+              <Reveal key={job.id} delay={index * 80} className="rounded-2xl border border-[#E5E7EB] bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
                 <div className="mb-2 flex items-center justify-between gap-3">
                   <span className="text-xs font-semibold tracking-wider text-[#e11d2e] uppercase">
                     {job.company}

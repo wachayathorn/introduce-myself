@@ -6,7 +6,7 @@ export const experiences: Experience[] = [
     title: "Senior Engineer",
     company: "Ascend Money",
     period: "11/2026 - Present",
-    location: "Thailand",
+    location: "Bangkok, Thailand",
     team: "Virtual Bank",
     current: true,
   },
@@ -29,7 +29,7 @@ export const experiences: Experience[] = [
     title: "Backend Developer",
     company: "Bluewind Solution",
     period: "06/2019 - 10/2019",
-    location: "Thailand",
+    location: "Pathum Thani, Thailand",
   },
 ];
 

@@ -50,7 +50,7 @@ export default function Contact() {
   return (
     <section id="contact" className="bg-[#f3f4f5] px-4 py-20 md:px-10 lg:px-16">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 lg:grid-cols-12">
-        <Reveal className="lg:col-span-12">
+        <Reveal className="rounded-2xl border border-[#E5E7EB] bg-white p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] lg:col-span-12">
           <span className="rounded-full bg-white px-3 py-1 text-xs font-bold tracking-wider text-[#6C727F] uppercase shadow-sm">
             Contact
           </span>
@@ -66,7 +66,7 @@ export default function Contact() {
               href="https://github.com/wachayathorn"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center justify-between rounded-xl bg-white p-4 shadow-[0_2px_10px_rgba(0,0,0,0.03)]"
+              className="hover-pop flex items-center justify-between rounded-xl border border-[#E5E7EB] bg-white p-4 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:bg-black hover:text-white"
             >
               <span>
                 <span className="block text-[11px] tracking-wider text-[#6C727F] uppercase">GitHub</span>
@@ -77,7 +77,7 @@ export default function Contact() {
               href="https://linkedin.com/in/wachayathorn"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center justify-between rounded-xl bg-white p-4 shadow-[0_2px_10px_rgba(0,0,0,0.03)]"
+              className="hover-pop flex items-center justify-between rounded-xl border border-[#E5E7EB] bg-white p-4 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:bg-black hover:text-white"
             >
               <span>
                 <span className="block text-[11px] tracking-wider text-[#6C727F] uppercase">LinkedIn</span>
