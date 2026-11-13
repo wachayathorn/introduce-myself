@@ -15,8 +15,10 @@ export default function Welcome() {
           Software Engineer
         </p>
         <p className="animate-fade-in-up animation-delay-300 mt-5 max-w-2xl text-base leading-7 text-[#6C727F] sm:text-lg">
-          Specializing in backend microservices and high-performance APIs for the Virtual Bank team
-          at Ascend Money. Primary technologies are Kotlin and Spring Boot, with AWS for deployment.
+          Software Engineer with at least six years of experience. Specializes in scalable
+          microservices and high-performance APIs. Proficient in concurrency, distributed systems,
+          and the optimization of backend architectures for reliability. Experience includes API
+          design, database design, message queues, and cloud-native infrastructure.
         </p>
       </div>
     </section>

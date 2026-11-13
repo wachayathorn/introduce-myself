@@ -26,7 +26,7 @@ export default function Education() {
               />
               <div>
                 <p className="text-xs font-semibold tracking-wider text-[#e11d2e] uppercase">
-                  Undergraduate Degree · GPA {education.gpa}
+                  Undergraduate Degree · GPAX {education.gpa}
                 </p>
                 <h3 className="text-2xl font-semibold text-[#111418]">{education.degree}</h3>
                 <p className="mt-1 text-[15px] text-[#6C727F]">{education.institution}</p>

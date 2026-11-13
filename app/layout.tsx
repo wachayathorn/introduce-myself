@@ -5,7 +5,7 @@ import Footer from "./components/layout/footer";
 export const metadata: Metadata = {
   title: "Wachayathorn Singsena",
   description:
-    "Senior Software Engineer focused on backend microservices. Kotlin and Spring Boot. Virtual Bank at Ascend Money.",
+    "Software Engineer focused on backend microservices. Kotlin and Spring Boot. Virtual Bank at Ascend Money.",
 };
 
 export default function RootLayout({
