@@ -2,6 +2,7 @@
 @import "tailwindcss";
 
 @theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, sans-serif;
   --color-black: #0a0a0a;
   --color-black-dark: #000000;
   --color-gray-medium: #2a2a2a;
@@ -14,8 +15,8 @@
 }
 
 html {
-  scroll-snap-type: y mandatory;
-  scroll-padding-top: 5rem;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }
 
 /* ===========================
@@ -235,6 +236,27 @@ html {
 
 .reveal-in {
   animation: reveal-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.lazy-show {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.lazy-show.is-shown {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lazy-show {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 .reveal-in .pop-in {

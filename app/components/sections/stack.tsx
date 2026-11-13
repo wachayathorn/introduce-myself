@@ -1,62 +1,91 @@
-import { currentTools, stacks } from "@/lib/data";
-import Line from "../ui/line";
 import Reveal from "../ui/reveal";
+import { currentTools, stacks } from "@/lib/data";
+
+const labels: Record<string, string> = {
+  html5: "HTML5",
+  sass: "Sass",
+  bootstrap: "Bootstrap",
+  tailwindcss: "Tailwind",
+  react: "React",
+  nextjs: "Next.js",
+  kotlin: "Kotlin",
+  spring: "Spring",
+  go: "Go",
+  grpc: "gRPC",
+  express: "Express",
+  nestjs: "NestJS",
+  graphql: "GraphQL",
+  "dot-net": ".NET",
+  mongodb: "MongoDB",
+  mysql: "MySQL",
+  mariadb: "MariaDB",
+  postgresql: "PostgreSQL",
+  microsoftsqlserver: "SQL Server",
+  redis: "Redis",
+  amazonwebservices: "AWS",
+  googlecloud: "Google Cloud",
+  firebase: "Firebase",
+  docker: "Docker",
+  kubernetes: "Kubernetes",
+  terraform: "Terraform",
+  jenkins: "Jenkins",
+};
+
+function toolName(iconUrl: string) {
+  const match = iconUrl.match(/\/icons\/([^/]+)\//);
+  const slug = match?.[1] ?? "";
+  return labels[slug] ?? slug;
+}
 
 export default function Stack() {
   return (
-    <div id="stack" className="premium-surface flex min-h-screen snap-start grow items-center">
-      <div className="container mx-auto max-w-6xl h-auto px-6 py-20 flex flex-col items-center justify-center">
-        <span className="animate-reveal-up text-xs font-semibold uppercase tracking-[0.24em] text-gray-muted">
-          Toolkit
-        </span>
-        <h1 className="mt-4 text-4xl md:text-6xl font-bold leading-none tracking-[-0.05em] text-center text-black animate-reveal-up animation-delay-200">
-          Technologies I Work With <br />
-          <span className="mt-4 inline-block text-gray-muted font-medium text-base md:text-xl tracking-normal">
-            Tech stack I have experience in
+    <section id="stack" className="bg-[#f3f4f5] px-4 py-20 md:px-10 lg:px-16">
+      <div className="mx-auto max-w-7xl">
+        <Reveal className="mx-auto mb-10 max-w-2xl text-center">
+          <span className="rounded-full bg-white px-3 py-1 text-xs font-bold tracking-wider text-[#6C727F] uppercase shadow-sm">
+            Stack
           </span>
-        </h1>
-        <Reveal className="mt-12 w-full">
-        <div className="premium-card flex w-full flex-col items-center rounded-3xl px-6 py-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">
-            Now
+          <h2 className="mt-2 text-4xl font-bold tracking-tight text-[#111418]">
+            Technologies I Work With
+          </h2>
+          <p className="mt-2 text-[15px] text-[#6C727F]">
+            Backend first. Kotlin and Spring Boot are my daily tools. Cloud tools support the services.
           </p>
-          <ul className="mt-6 flex flex-wrap items-center justify-center gap-4">
-            {currentTools.map((tool, index) => (
-              <li
-                key={tool.name}
-                className="pop-in flex min-w-28 flex-col items-center rounded-2xl border border-gray-light bg-white-off px-5 py-4"
-                style={{ animationDelay: `${index * 120}ms` }}
-              >
-                <img src={tool.icon} alt={tool.name} className="h-12 w-12" />
-                <span className="mt-3 text-sm font-semibold text-black">{tool.name}</span>
-              </li>
-            ))}
-            </ul>
-        </div>
         </Reveal>
-        <div className="mt-5 grid w-full grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {stacks.map((stackCategory, categoryIndex) => (
-            <Reveal key={stackCategory.title} delay={categoryIndex * 100}>
-            <div className="premium-card premium-hover flex h-full flex-col items-center rounded-2xl p-6">
-              <div className="font-bold text-xl md:text-2xl pb-5 text-black">
-                {stackCategory.title}
-              </div>
-              <ul className="grid grid-cols-2 gap-3 justify-center">
-                {stackCategory.icons.map((icon, index) => (
-                  <li
-                    key={index}
-                    className="p-3 rounded-2xl border border-transparent bg-white-off hover:border-accent hover:bg-white hover:scale-105 hover:shadow-sm transition-all duration-300 flex flex-col items-center"
-                  >
-                    <img src={icon} className="w-10 h-10 md:w-12 md:h-12 m-2" />
+
+        <Reveal delay={80} className="mb-6 flex flex-col items-start justify-between gap-6 rounded-2xl bg-white p-6 shadow-[0_8px_24px_rgba(0,0,0,0.04)] md:flex-row md:items-center md:p-8">
+          <div>
+            <div className="flex items-center gap-2">
+              <h3 className="text-lg font-semibold">Now · Daily Drivers</h3>
+              <span className="h-2 w-2 animate-pulse rounded-full bg-[#e11d2e]" />
+            </div>
+            <p className="text-sm text-[#6C727F]">Virtual Bank at Ascend Money</p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {currentTools.map((tool) => (
+              <span key={tool.name} className="rounded-full bg-black px-4 py-2 text-xs font-semibold text-white">
+                {tool.name}
+              </span>
+            ))}
+          </div>
+        </Reveal>
+
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {stacks.map((group, index) => (
+            <Reveal key={group.title} delay={index * 70} className="rounded-2xl bg-white p-6 shadow-[0_4px_16px_rgba(0,0,0,0.03)]">
+              <h3 className="mb-3 text-lg font-semibold">{group.title}</h3>
+              <ul className="space-y-2.5 text-sm text-[#45474a]">
+                {group.icons.map((icon) => (
+                  <li key={icon} className="flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-black" />
+                    {toolName(icon)}
                   </li>
                 ))}
               </ul>
-            </div>
             </Reveal>
           ))}
         </div>
-        <Line />
       </div>
-    </div>
+    </section>
   );
 }

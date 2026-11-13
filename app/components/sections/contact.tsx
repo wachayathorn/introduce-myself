@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Line from "../ui/line";
+import Reveal from "../ui/reveal";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -12,18 +12,11 @@ export default function Contact() {
     website: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<
-    "idle" | "success" | "error"
-  >("idle");
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -34,24 +27,14 @@ export default function Contact() {
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to submit contact form");
-      }
+      if (!response.ok) throw new Error("Failed to submit contact form");
 
       setSubmitStatus("success");
-      setFormData({
-        firstname: "",
-        lastname: "",
-        email: "",
-        message: "",
-        website: "",
-      });
+      setFormData({ firstname: "", lastname: "", email: "", message: "", website: "" });
       setTimeout(() => setSubmitStatus("idle"), 3000);
     } catch {
       setSubmitStatus("error");
@@ -61,123 +44,83 @@ export default function Contact() {
     }
   };
 
-  return (
-    <div
-      id="contact"
-      className="premium-surface flex min-h-screen snap-start grow items-center justify-center"
-    >
-      <div className="container mx-auto max-w-6xl h-auto px-6 py-20 flex flex-col items-center justify-center">
-        <span className="animate-reveal-up text-xs font-semibold uppercase tracking-[0.24em] text-gray-muted">
-          Contact
-        </span>
-        <h1 className="mt-4 text-4xl md:text-6xl font-bold leading-none tracking-[-0.05em] text-center text-black animate-reveal-up animation-delay-200">
-          Get In Touch
-        </h1>
-        <p className="mt-5 text-gray-muted font-medium text-center mb-10 max-w-md leading-7 animate-reveal-up animation-delay-300">
-          Have a question or want to work together ?
-        </p>
+  const fieldClass =
+    "w-full rounded-full bg-[#F3F4F6] px-4 py-3.5 text-[15px] text-[#111418] outline-none focus:bg-white focus:shadow-[0_0_0_2px_rgba(0,0,0,0.8)]";
 
-        <form
-          onSubmit={handleSubmit}
-          className="premium-card mx-auto w-full max-w-2xl rounded-3xl p-8 md:p-12 space-y-6 animate-soft-scale animation-delay-400"
-        >
+  return (
+    <section id="contact" className="bg-[#f3f4f5] px-4 py-20 md:px-10 lg:px-16">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 lg:grid-cols-12">
+        <Reveal className="lg:col-span-12">
+          <span className="rounded-full bg-white px-3 py-1 text-xs font-bold tracking-wider text-[#6C727F] uppercase shadow-sm">
+            Contact
+          </span>
+          <h2 className="mt-3 text-4xl font-bold tracking-tight text-[#111418]">Get In Touch</h2>
+          <p className="mt-2 text-lg font-semibold text-[#e11d2e]">
+            Have a question or want to work together?
+          </p>
+          <p className="mt-4 text-[15px] leading-6 text-[#6C727F]">
+            Senior Software Engineer. I focus on backend microservices. Find me on GitHub and LinkedIn.
+          </p>
+          <div className="mt-8 space-y-4">
+            <a
+              href="https://github.com/wachayathorn"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-between rounded-xl bg-white p-4 shadow-[0_2px_10px_rgba(0,0,0,0.03)]"
+            >
+              <span>
+                <span className="block text-[11px] tracking-wider text-[#6C727F] uppercase">GitHub</span>
+                <span className="font-semibold">github.com/wachayathorn</span>
+              </span>
+            </a>
+            <a
+              href="https://linkedin.com/in/wachayathorn"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-between rounded-xl bg-white p-4 shadow-[0_2px_10px_rgba(0,0,0,0.03)]"
+            >
+              <span>
+                <span className="block text-[11px] tracking-wider text-[#6C727F] uppercase">LinkedIn</span>
+                <span className="font-semibold">linkedin.com/in/wachayathorn</span>
+              </span>
+            </a>
+          </div>
+        </Reveal>
+
+        <form onSubmit={handleSubmit} className="hidden space-y-5 rounded-2xl bg-white p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] md:p-10 lg:col-span-7">
           <div className="hidden" aria-hidden="true">
             <label htmlFor="website">Website</label>
-            <input
-              id="website"
-              type="text"
-              name="website"
-              tabIndex={-1}
-              autoComplete="off"
-              value={formData.website}
-              onChange={handleChange}
-            />
+            <input id="website" name="website" value={formData.website} onChange={handleChange} tabIndex={-1} autoComplete="off" />
           </div>
-
-          {/* Name Row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-sm font-semibold text-black mb-3">
-                First Name
-              </label>
-              <input
-                type="text"
-                name="firstname"
-                value={formData.firstname}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 border border-gray-light rounded-2xl focus:border-black focus:outline-none focus:ring-4 focus:ring-black/5 transition-all bg-white-off hover:bg-white"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-semibold text-black mb-3">
-                Last Name
-              </label>
-              <input
-                type="text"
-                name="lastname"
-                value={formData.lastname}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 border border-gray-light rounded-2xl focus:border-black focus:outline-none focus:ring-4 focus:ring-black/5 transition-all bg-white-off hover:bg-white"
-              />
-            </div>
-          </div>
-
-          {/* Email */}
-          <div>
-            <label className="block text-sm font-semibold text-black mb-3">
-              Email Address
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+            <label className="block text-xs font-semibold">
+              First Name
+              <input name="firstname" value={formData.firstname} onChange={handleChange} required className={`mt-2 ${fieldClass}`} />
             </label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 border border-gray-light rounded-2xl focus:border-black focus:outline-none focus:ring-4 focus:ring-black/5 transition-all bg-white-off hover:bg-white"
-            />
-          </div>
-
-          {/* Message */}
-          <div>
-            <label className="block text-sm font-semibold text-black mb-3">
-              Message
+            <label className="block text-xs font-semibold">
+              Last Name
+              <input name="lastname" value={formData.lastname} onChange={handleChange} required className={`mt-2 ${fieldClass}`} />
             </label>
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              rows={5}
-              className="w-full px-4 py-3 border border-gray-light rounded-2xl focus:border-black focus:outline-none focus:ring-4 focus:ring-black/5 transition-all bg-white-off hover:bg-white resize-none"
-            />
           </div>
-
-          {/* Status Messages */}
-          {submitStatus === "success" && (
-            <div className="animate-soft-scale p-4 bg-green-50 border border-green-300 rounded-2xl text-green-700 font-medium">
-              ✓ Message sent successfully! I'll get back to you soon.
-            </div>
-          )}
-          {submitStatus === "error" && (
-            <div className="animate-soft-scale p-4 bg-red-50 border border-red-300 rounded-2xl text-red-700 font-medium">
-              ✗ Something went wrong. Please try again.
-            </div>
-          )}
-
-          {/* Submit Button */}
+          <label className="block text-xs font-semibold">
+            Email Address
+            <input type="email" name="email" value={formData.email} onChange={handleChange} required className={`mt-2 ${fieldClass}`} />
+          </label>
+          <label className="block text-xs font-semibold">
+            Message
+            <textarea name="message" value={formData.message} onChange={handleChange} required rows={4} className="mt-2 w-full resize-none rounded-2xl bg-[#F3F4F6] px-4 py-3.5 text-[15px] outline-none focus:bg-white focus:shadow-[0_0_0_2px_rgba(0,0,0,0.8)]" />
+          </label>
+          {submitStatus === "success" ? <p>Message sent successfully! I&apos;ll get back to you soon.</p> : null}
+          {submitStatus === "error" ? <p>Something went wrong. Please try again.</p> : null}
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-black text-white font-semibold py-3 px-6 rounded-full hover:-translate-y-1 hover:bg-accent hover:shadow-xl transition-all duration-300 disabled:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex w-full items-center justify-center rounded-full bg-black py-4 text-sm font-semibold text-white disabled:opacity-60"
           >
-            {isSubmitting ? "Sending..." : "Send"}
+            {isSubmitting ? "Sending..." : "Send Message"}
           </button>
         </form>
-
-        <Line />
       </div>
-    </div>
+    </section>
   );
 }

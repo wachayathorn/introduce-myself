@@ -1,67 +1,80 @@
-import { experiences } from "@/lib/data";
-import Line from "../ui/line";
 import Reveal from "../ui/reveal";
+import { experiences } from "@/lib/data";
 
 export default function Experience() {
-  const current = experiences.find((experience) => experience.current);
-  const previous = experiences.filter((experience) => !experience.current);
+  const current = experiences.find((job) => job.current);
+  const previous = experiences.filter((job) => !job.current);
 
   return (
-    <div id="experience" className="flex min-h-screen snap-start grow items-center bg-white-off">
-      <div className="container mx-auto flex max-w-6xl flex-col px-6 py-20">
-        <div className="flex flex-col gap-12 md:flex-row md:items-stretch">
-          <div className="flex flex-col md:w-5/12">
-            <span className="animate-reveal-up text-xs font-semibold uppercase tracking-[0.24em] text-accent">
-              Now
+    <section id="experience" className="bg-[#f8f9fa] px-4 py-20 md:px-10 lg:px-16">
+      <div className="mx-auto max-w-7xl">
+        <Reveal className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+          <div>
+            <span className="rounded-full bg-[#F3F4F6] px-3 py-1 text-xs font-bold tracking-wider text-[#6C727F] uppercase">
+              Career
             </span>
-            <Reveal className="mt-6 flex flex-1" delay={80}>
-            <div className="premium-hover flex w-full flex-1 flex-col justify-between rounded-3xl border-t-4 border-accent bg-black p-8 text-white">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/50">
-                  Current role
-                </p>
-                <h1 className="mt-4 text-4xl font-bold leading-none tracking-[-0.05em] md:text-5xl">
-                  {current?.title}
-                </h1>
-                <h2 className="mt-4 text-xl font-medium text-white/80">
-                  {current?.company}
-                </h2>
-                {current?.team ? (
-                  <p className="mt-2 text-base text-white/60">{current.team}</p>
-                ) : null}
-              </div>
-              <div className="mt-10 flex flex-col gap-2 text-sm text-white/60">
-                <span>{current?.period}</span>
-                <span>{current?.location}</span>
-              </div>
-            </div>
-            </Reveal>
+            <h2 className="mt-2 text-4xl font-bold tracking-tight text-[#111418]">
+              Now & Before
+            </h2>
           </div>
+          <p className="max-w-md text-[15px] leading-6 text-[#6C727F]">
+            Backend microservices come first. I am a Senior Software Engineer on the Virtual Bank team at Ascend Money. Cloud is part of the work, not the main story.
+          </p>
+        </Reveal>
 
-          <div className="flex flex-col md:w-7/12">
-            <span className="animate-reveal-up text-xs font-semibold uppercase tracking-[0.24em] text-gray-muted">
-              Before
-            </span>
-            <div className="mt-6 flex flex-col border-l border-gray-light pl-8">
-              {previous.map((experience, index) => (
-                <Reveal key={experience.id} delay={index * 120}>
-                <div className="relative pb-8 last:pb-0">
-                  <span className="absolute -left-[39px] top-1.5 h-3 w-3 rounded-full border-2 border-white bg-accent" />
-                  <h2 className="text-xl font-semibold text-black">{experience.title}</h2>
-                  <h3 className="mt-1 text-base font-medium text-black">{experience.company}</h3>
-                  <p className="mt-2 text-sm text-gray-muted">
-                    {experience.period}
-                    <span className="px-2">·</span>
-                    {experience.location}
-                  </p>
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
+          {current ? (
+            <Reveal className="flex flex-col justify-between rounded-2xl bg-white p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] md:p-10 lg:col-span-7">
+              <div>
+                <div className="mb-6 flex items-center justify-between gap-3">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-[#e11d2e] px-3 py-1 text-xs font-semibold text-white">
+                    <span className="h-2 w-2 rounded-full bg-white" />
+                    Current Role · Now
+                  </span>
+                  <span className="text-xs text-[#6C727F]">{current.period}</span>
                 </div>
-                </Reveal>
-              ))}
+                <h3 className="text-4xl font-bold tracking-tight">{current.title}</h3>
+                <p className="mt-1 text-lg font-semibold text-[#e11d2e]">
+                  {current.company}
+                  {current.team ? <span className="font-medium text-[#6C727F]"> · {current.team}</span> : null}
+                </p>
+                <p className="mt-6 text-base leading-7 text-[#6C727F]">
+                  I design backend microservices with Kotlin and Spring Boot. AWS is where they run.
+                </p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {["Kotlin", "Spring Boot", "Microservices"].map((tool) => (
+                    <span key={tool} className="rounded-full bg-[#F3F4F6] px-3.5 py-1.5 text-xs font-medium">
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <p className="mt-8 text-sm text-[#6C727F]">{current.location}</p>
+            </Reveal>
+          ) : null}
+
+          <div className="flex flex-col gap-4 lg:col-span-5">
+            <div className="flex items-center gap-2">
+              <span className="rounded-full bg-[#F3F4F6] px-3 py-1 text-xs font-bold tracking-wider text-[#6C727F] uppercase">
+                Before
+              </span>
+              <div className="h-px flex-1 bg-[#e7e8e9]" />
             </div>
+            {previous.map((job, index) => (
+              <Reveal key={job.id} delay={index * 80} className="rounded-2xl bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
+                <div className="mb-2 flex items-center justify-between gap-3">
+                  <span className="text-xs font-semibold tracking-wider text-[#e11d2e] uppercase">
+                    {job.company}
+                  </span>
+                  <span className="text-xs text-[#6C727F]">{job.period}</span>
+                </div>
+                <h4 className="text-lg font-semibold">{job.title}</h4>
+                <p className="mt-4 text-xs text-[#6C727F]">{job.location}</p>
+              </Reveal>
+            ))}
           </div>
         </div>
-        <Line />
       </div>
-    </div>
+    </section>
   );
 }
