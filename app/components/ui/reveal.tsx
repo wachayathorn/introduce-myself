@@ -21,21 +21,13 @@ export default function Reveal({ children, className = "", delay = 0 }: RevealPr
       return;
     }
 
-    const showIfSeen = () => {
-      const rect = element.getBoundingClientRect();
-      if (rect.top < window.innerHeight * 0.92 && rect.bottom > 40) {
-        setShown(true);
-        return true;
-      }
-      return false;
-    };
-
-    if (showIfSeen()) return;
-
     const onScroll = () => {
-      if (showIfSeen()) window.removeEventListener("scroll", onScroll);
+      const rect = element.getBoundingClientRect();
+      const inView = rect.top < window.innerHeight * 0.9 && rect.bottom > 80;
+      setShown(inView);
     };
 
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -43,8 +35,8 @@ export default function Reveal({ children, className = "", delay = 0 }: RevealPr
   return (
     <div
       ref={ref}
-      className={`reveal ${shown ? "reveal-in" : ""} ${className}`}
-      style={{ animationDelay: `${delay}ms` }}
+      className={`lazy-show ${shown ? "is-shown" : ""} ${className}`}
+      style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
     </div>
