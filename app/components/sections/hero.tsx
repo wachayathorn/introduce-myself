@@ -35,6 +35,29 @@ export default function Welcome() {
     });
   };
 
+  const resetOrder = () => setOrder(["now", "daily", "before"]);
+
+  const deck = (stacked: boolean) =>
+    order.map((id, index) => (
+      <article
+        key={id}
+        onMouseEnter={() => bringToMiddle(id)}
+        className={`rounded-2xl border border-[#E5E7EB] bg-white p-5 text-left transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          stacked
+            ? index === 1
+              ? "z-10 scale-[1.02] shadow-[0_24px_48px_-8px_rgba(0,0,0,0.12)]"
+              : "shadow-[0_16px_36px_-6px_rgba(0,0,0,0.08)]"
+            : `${cardSlots[index]} absolute ${
+                index === 1
+                  ? "shadow-[0_24px_48px_-8px_rgba(0,0,0,0.12)]"
+                  : "shadow-[0_16px_36px_-6px_rgba(0,0,0,0.08)]"
+              }`
+        }`}
+      >
+        {cards[id as keyof typeof cards]}
+      </article>
+    ));
+
   const cards = {
     now: (
       <>
@@ -151,39 +174,15 @@ export default function Welcome() {
 
         <div
           className="mt-16 flex w-full max-w-xl flex-col gap-4 xl:hidden"
-          onMouseLeave={() => setOrder(["now", "daily", "before"])}
+          onMouseLeave={resetOrder}
         >
-          {order.map((id, index) => (
-            <article
-              key={id}
-              onMouseEnter={() => bringToMiddle(id)}
-              className={`rounded-2xl border border-[#E5E7EB] bg-white p-5 text-left transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-                index === 1
-                  ? "z-10 scale-[1.02] shadow-[0_24px_48px_-8px_rgba(0,0,0,0.12)]"
-                  : "shadow-[0_16px_36px_-6px_rgba(0,0,0,0.08)]"
-              }`}
-            >
-              {cards[id as keyof typeof cards]}
-            </article>
-          ))}
+          {deck(true)}
         </div>
         <div
           className="relative mx-auto mt-16 hidden min-h-[280px] w-full max-w-4xl xl:block"
-          onMouseLeave={() => setOrder(["now", "daily", "before"])}
+          onMouseLeave={resetOrder}
         >
-          {order.map((id, index) => (
-            <article
-              key={id}
-              onMouseEnter={() => bringToMiddle(id)}
-              className={`absolute rounded-2xl border border-[#E5E7EB] bg-white p-5 text-left transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${cardSlots[index]} ${
-                index === 1
-                  ? "shadow-[0_24px_48px_-8px_rgba(0,0,0,0.12)]"
-                  : "shadow-[0_16px_36px_-6px_rgba(0,0,0,0.08)]"
-              }`}
-            >
-              {cards[id as keyof typeof cards]}
-            </article>
-          ))}
+          {deck(false)}
         </div>
       </div>
     </section>

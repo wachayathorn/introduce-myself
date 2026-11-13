@@ -1,4 +1,4 @@
-import type { Experience, Education, Stack, Project } from "@/types";
+import type { Experience, Education, Stack } from "@/types";
 
 export const experiences: Experience[] = [
   {
@@ -37,14 +37,11 @@ export const education: Education = {
   degree: "Bachelor of Computer Engineering",
   institution: "Rajamangala University of Technology Thanyaburi",
   period: "08/2016 - 04/2020",
-  startDate: "2016-08",
-  endDate: "2020-04",
   gpa: 3.44,
   location: "Pathum Thani, Thailand",
   achievements: [
     "Senior project: developed full-stack web and mobile applications with Node.js and Express.js, deployed on Firebase Cloud Functions, using Firestore and Realtime Database.",
   ],
-  highlights: [],
 };
 
 export const currentTools = [
@@ -111,5 +108,3 @@ export const stacks: Stack[] = [
     ],
   },
 ];
-
-export const projects: Project[] = [];
