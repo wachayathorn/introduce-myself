@@ -1,3 +1,7 @@
+"use client";
+
+import { useRef, useState } from "react";
+
 const stats = [
   { value: "6+", label: "Years Experience" },
   { value: "4", label: "Roles" },
@@ -5,7 +9,66 @@ const stats = [
   { value: "API", label: "Microservices" },
 ];
 
+const cardSlots = [
+  "left-0 top-8 z-10 w-72 -rotate-3 lg:left-6",
+  "left-1/2 top-0 z-30 w-96 -translate-x-1/2 rotate-0",
+  "top-10 z-10 w-72 rotate-3 left-[calc(100%-18rem)] lg:left-[calc(100%-19.5rem)]",
+];
+
 export default function Welcome() {
+  const [order, setOrder] = useState(["now", "daily", "before"]);
+  const moving = useRef(false);
+
+  const bringToMiddle = (id: string) => {
+    if (moving.current) return;
+    setOrder((current) => {
+      const index = current.indexOf(id);
+      if (index === 1) return current;
+      moving.current = true;
+      window.setTimeout(() => {
+        moving.current = false;
+      }, 520);
+      const next = [...current];
+      next[index] = current[1];
+      next[1] = id;
+      return next;
+    });
+  };
+
+  const cards = {
+    now: (
+      <>
+        <p className="text-xs font-semibold text-[#6C727F] uppercase">Now</p>
+        <h2 className="mt-1 text-lg font-bold">Virtual Bank</h2>
+        <p className="text-sm text-[#6C727F]">Ascend Money · Bangkok, Thailand</p>
+        <p className="mt-4 text-sm text-[#45474a]">Backend · Kotlin · Spring Boot</p>
+      </>
+    ),
+    daily: (
+      <>
+        <p className="text-xs font-bold tracking-wider text-[#6C727F] uppercase">Daily tools</p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {["Kotlin", "Spring Boot", "Microservices"].map((tool) => (
+            <span key={tool} className="rounded-full bg-[#F3F4F6] px-3 py-1 text-sm font-medium">
+              {tool}
+            </span>
+          ))}
+        </div>
+        <p className="mt-4 text-sm text-[#6C727F]">
+          Backend microservices for the Virtual Bank team.
+        </p>
+      </>
+    ),
+    before: (
+      <>
+        <p className="text-xs font-semibold text-[#e11d2e] uppercase">Before</p>
+        <h2 className="mt-1 text-lg font-bold">KBTG</h2>
+        <p className="text-sm text-[#6C727F]">Innovation Engineer</p>
+        <p className="mt-4 text-sm text-[#45474a]">04/2022 – 10/2026 · Nonthaburi</p>
+      </>
+    ),
+  };
+
   return (
     <section id="home" className="relative px-4 pt-16 pb-16 md:px-10 lg:px-16">
       <div className="pointer-events-none absolute top-10 left-1/2 -z-10 h-[420px] w-[800px] -translate-x-1/2 rounded-full bg-gradient-to-tr from-[#e11d2e]/[0.04] via-red-100/10 to-transparent blur-3xl" />
@@ -85,34 +148,23 @@ export default function Welcome() {
           ))}
         </div>
 
-        <div className="relative mt-16 hidden min-h-[280px] w-full md:block">
-          <article className="animate-float absolute top-4 left-6 w-72 -rotate-3 rounded-2xl border border-[#E5E7EB] bg-white p-5 text-left shadow-[0_16px_36px_-6px_rgba(0,0,0,0.08)] transition-transform duration-300 hover:rotate-0">
-            <p className="text-xs font-semibold text-[#6C727F] uppercase">Now</p>
-            <h2 className="mt-1 text-lg font-bold">Virtual Bank</h2>
-            <p className="text-sm text-[#6C727F]">Ascend Money · Bangkok, Thailand</p>
-            <p className="mt-4 text-sm text-[#45474a]">Backend · Kotlin · Spring Boot</p>
-          </article>
-          <article className="animate-soft-scale relative z-20 mx-auto w-96 rounded-2xl border border-[#E5E7EB] bg-white p-6 text-left shadow-[0_24px_48px_-8px_rgba(0,0,0,0.1)]">
-            <p className="text-xs font-bold tracking-wider text-[#6C727F] uppercase">
-              Daily tools
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {["Kotlin", "Spring Boot", "Microservices"].map((tool) => (
-                <span key={tool} className="hover-pop rounded-full bg-[#F3F4F6] px-3 py-1 text-sm font-medium hover:bg-[#fff1f2] hover:text-[#e11d2e]">
-                  {tool}
-                </span>
-              ))}
-            </div>
-            <p className="mt-4 text-sm text-[#6C727F]">
-              Backend microservices for the Virtual Bank team.
-            </p>
-          </article>
-          <article className="animate-float-delayed absolute top-6 right-6 w-72 rotate-3 rounded-2xl border border-[#E5E7EB] bg-white p-5 text-left shadow-[0_16px_36px_-6px_rgba(0,0,0,0.08)] transition-transform duration-300 hover:rotate-0">
-            <p className="text-xs font-semibold text-[#e11d2e] uppercase">Before</p>
-            <h2 className="mt-1 text-lg font-bold">KBTG</h2>
-            <p className="text-sm text-[#6C727F]">Innovation Engineer</p>
-            <p className="mt-4 text-sm text-[#45474a]">04/2022 – 10/2026 · Nonthaburi</p>
-          </article>
+        <div
+          className="relative mx-auto mt-16 hidden h-[240px] w-full max-w-4xl md:block"
+          onMouseLeave={() => setOrder(["now", "daily", "before"])}
+        >
+          {order.map((id, index) => (
+            <article
+              key={id}
+              onMouseEnter={() => bringToMiddle(id)}
+              className={`absolute rounded-2xl border border-[#E5E7EB] bg-white p-5 text-left transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${cardSlots[index]} ${
+                index === 1
+                  ? "shadow-[0_24px_48px_-8px_rgba(0,0,0,0.12)]"
+                  : "shadow-[0_16px_36px_-6px_rgba(0,0,0,0.08)]"
+              }`}
+            >
+              {cards[id as keyof typeof cards]}
+            </article>
+          ))}
         </div>
       </div>
     </section>
