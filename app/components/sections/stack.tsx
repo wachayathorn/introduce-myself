@@ -38,7 +38,7 @@ function toolName(iconUrl: string) {
 
 export default function Stack() {
   return (
-    <section id="stack" className="bg-[var(--band)] px-4 py-20 md:px-10 lg:px-16">
+    <section id="stack" className="bg-[var(--page)] px-4 py-20 md:px-10 lg:px-16">
       <div className="mx-auto max-w-7xl">
         <Reveal className="topic mx-auto mb-10 max-w-2xl text-center">
           <span className="rounded-full bg-[var(--card)] px-3 py-1 text-xs font-bold tracking-wider text-[var(--muted)] uppercase shadow-sm">

@@ -2,7 +2,7 @@ import Reveal from "../ui/reveal";
 
 export default function Contact() {
   return (
-    <section id="contact" className="bg-[var(--band)] px-4 py-20 md:px-10 lg:px-16">
+    <section id="contact" className="bg-[var(--page)] px-4 py-20 md:px-10 lg:px-16">
       <div className="mx-auto max-w-7xl">
         <Reveal className="topic">
           <span className="rounded-full bg-[var(--card)] px-3 py-1 text-xs font-bold tracking-wider text-[var(--muted)] uppercase shadow-sm">
