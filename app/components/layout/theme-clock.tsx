@@ -12,7 +12,7 @@ export function themeForDate(date: Date) {
 export default function ThemeClock() {
   useEffect(() => {
     const apply = () => {
-      const saved = localStorage.getItem("theme");
+      const saved = sessionStorage.getItem("theme");
       document.documentElement.dataset.theme =
         saved === "light" || saved === "dark" ? saved : themeForDate(new Date());
     };

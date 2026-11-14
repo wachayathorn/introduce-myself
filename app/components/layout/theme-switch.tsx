@@ -12,7 +12,7 @@ export default function ThemeSwitch() {
   }, []);
 
   const choose = (next: Theme) => {
-    localStorage.setItem("theme", next);
+    sessionStorage.setItem("theme", next);
     document.documentElement.dataset.theme = next;
     setTheme(next);
   };

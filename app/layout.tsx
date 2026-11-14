@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "Software Engineer focused on backend microservices. Kotlin and Spring Boot. Virtual Bank at Ascend Money.",
 };
 
-const themeScript = `(function(){try{var saved=localStorage.getItem("theme");if(saved==="light"||saved==="dark"){document.documentElement.dataset.theme=saved;return}var d=new Date();var minutes=d.getHours()*60+d.getMinutes();document.documentElement.dataset.theme=minutes>=360&&minutes<=1080?"light":"dark"}catch(e){}})();`;
+const themeScript = `(function(){try{var saved=sessionStorage.getItem("theme");if(saved==="light"||saved==="dark"){document.documentElement.dataset.theme=saved;return}var d=new Date();var minutes=d.getHours()*60+d.getMinutes();document.documentElement.dataset.theme=minutes>=360&&minutes<=1080?"light":"dark"}catch(e){}})();`;
 
 export default function RootLayout({
   children,
