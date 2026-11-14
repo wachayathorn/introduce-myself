@@ -47,12 +47,13 @@ export default function Stack() {
           <h2 className="mt-2 text-4xl font-bold tracking-tight text-[var(--ink)]">
             Technologies I Work With
           </h2>
+          <span className="section-rule center" />
           <p className="mt-2 text-[15px] text-[var(--muted)]">
             Backend technologies are the focus. Kotlin and Spring Boot are the primary tools. Cloud technologies support those services.
           </p>
         </Reveal>
 
-        <Reveal delay={80} className="mb-6 flex flex-col items-start justify-between gap-6 rounded-2xl border border-[var(--line)] bg-[var(--card)] p-6 shadow-[0_8px_24px_rgba(0,0,0,0.04)] md:flex-row md:items-center md:p-8">
+        <Reveal delay={160} className="mb-6 flex flex-col items-start justify-between gap-6 rounded-2xl border border-[var(--line)] bg-[var(--card)] p-6 shadow-[0_8px_24px_rgba(0,0,0,0.04)] md:flex-row md:items-center md:p-8">
           <div>
             <div className="flex items-center gap-2">
               <h3 className="text-lg font-semibold">Current technologies</h3>
@@ -75,7 +76,7 @@ export default function Stack() {
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           {stacks.map((group, index) => (
-            <Reveal key={group.title} delay={index * 70} className="rounded-2xl border border-[var(--line)] bg-[var(--card)] p-6 shadow-[0_4px_16px_rgba(0,0,0,0.03)]">
+            <Reveal key={group.title} delay={240 + index * 80} className="rounded-2xl border border-[var(--line)] bg-[var(--card)] p-6 shadow-[0_4px_16px_rgba(0,0,0,0.03)]">
               <h3 className="mb-3 text-lg font-semibold">{group.title}</h3>
               <ul className="space-y-2.5 text-sm text-[var(--soft-text)]">
                 {group.icons.map((icon) => (

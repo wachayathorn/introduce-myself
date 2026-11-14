@@ -16,6 +16,7 @@ export default function Experience() {
             <h2 className="mt-2 text-4xl font-bold tracking-tight text-[var(--ink)]">
               Professional Experience
             </h2>
+            <span className="section-rule" />
           </div>
           <p className="max-w-md text-[15px] leading-6 text-[var(--muted)]">
             Professional experience in backend microservices, currently with the Virtual Bank team at Ascend Money. Cloud infrastructure supports this work.
@@ -24,7 +25,7 @@ export default function Experience() {
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
           {current ? (
-            <Reveal className="flex flex-col justify-between rounded-2xl border border-[var(--line)] bg-[var(--card)] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] md:p-10 lg:col-span-7">
+            <Reveal delay={120} className="flex flex-col justify-between rounded-2xl border border-[var(--line)] bg-[var(--card)] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] md:p-10 lg:col-span-7">
               <div>
                 <div className="mb-6 flex items-center justify-between gap-3">
                   <span className="inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-3 py-1 text-xs font-semibold text-white">
@@ -61,7 +62,7 @@ export default function Experience() {
               <div className="h-px flex-1 bg-[var(--rule)]" />
             </div>
             {previous.map((job, index) => (
-              <Reveal key={job.id} delay={index * 80} className="rounded-2xl border border-[var(--line)] bg-[var(--card)] p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
+              <Reveal key={job.id} delay={200 + index * 80} className="rounded-2xl border border-[var(--line)] bg-[var(--card)] p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
                 <div className="mb-2 flex items-center justify-between gap-3">
                   <span className="text-xs font-semibold tracking-wider text-[var(--accent)] uppercase">
                     {job.company}

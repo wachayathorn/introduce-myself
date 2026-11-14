@@ -9,18 +9,21 @@ export default function Contact() {
             Contact
           </span>
           <h2 className="mt-3 text-4xl font-bold tracking-tight text-[var(--ink)]">Get In Touch</h2>
+          <span className="section-rule" />
           <p className="mt-2 text-lg font-semibold text-[var(--accent)]">
             Inquiries are welcome.
           </p>
           <p className="mt-4 text-[15px] leading-6 text-[var(--muted)]">
             Professional profiles are available on GitHub and LinkedIn.
           </p>
-          <div className="mt-8 space-y-4">
+        </Reveal>
+        <div className="mt-8 space-y-4">
+          <Reveal delay={160}>
             <a
               href="https://github.com/wachayathorn"
               target="_blank"
               rel="noreferrer"
-              className="hover-pop flex items-center gap-4 rounded-xl border border-[var(--line)] bg-[var(--card)] p-4 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:bg-[var(--hover-fill)] hover:text-[var(--hover-ink)]"
+              className="flex items-center gap-4 rounded-xl border border-[var(--line)] bg-[var(--card)] p-4 shadow-[0_2px_10px_rgba(0,0,0,0.03)] transition duration-300 hover:bg-[var(--hover-fill)] hover:text-[var(--hover-ink)]"
             >
               <img src="https://skillicons.dev/icons?i=github" alt="" className="h-10 w-10 rounded-lg bg-white" />
               <span>
@@ -28,11 +31,13 @@ export default function Contact() {
                 <span className="font-semibold">github.com/wachayathorn</span>
               </span>
             </a>
+          </Reveal>
+          <Reveal delay={240}>
             <a
               href="https://linkedin.com/in/wachayathorn"
               target="_blank"
               rel="noreferrer"
-              className="hover-pop flex items-center gap-4 rounded-xl border border-[var(--line)] bg-[var(--card)] p-4 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:bg-[var(--hover-fill)] hover:text-[var(--hover-ink)]"
+              className="flex items-center gap-4 rounded-xl border border-[var(--line)] bg-[var(--card)] p-4 shadow-[0_2px_10px_rgba(0,0,0,0.03)] transition duration-300 hover:bg-[var(--hover-fill)] hover:text-[var(--hover-ink)]"
             >
               <img src="https://skillicons.dev/icons?i=linkedin" alt="" className="h-10 w-10 rounded-lg bg-white" />
               <span>
@@ -40,8 +45,8 @@ export default function Contact() {
                 <span className="font-semibold">linkedin.com/in/wachayathorn</span>
               </span>
             </a>
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

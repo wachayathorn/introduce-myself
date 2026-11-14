@@ -97,10 +97,10 @@ body {
 
 .lazy-show {
   opacity: 0;
-  transform: translateY(36px);
+  transform: translateY(28px);
   transition:
-    opacity 0.7s ease,
-    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 1.25s ease,
+    transform 1.25s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .lazy-show.is-shown {
@@ -108,9 +108,29 @@ body {
   transform: none;
 }
 
+.section-rule {
+  display: block;
+  height: 2px;
+  width: 4.5rem;
+  margin-top: 0.85rem;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.section-rule.center {
+  margin-right: auto;
+  margin-left: auto;
+  transform-origin: center;
+}
+
+.lazy-show.is-shown .section-rule {
+  animation: hero-draw 1s 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 .lazy-show.is-shown:hover {
-  transform: translateY(-16px) scale(1.035) rotate(-0.4deg);
-  box-shadow: 0 28px 50px rgba(17, 20, 24, 0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
 }
 
 .lazy-show.topic.is-shown:hover {
@@ -134,8 +154,8 @@ body {
 }
 
 .hover-pop:hover {
-  transform: translateY(-10px) scale(1.07);
-  box-shadow: 0 20px 36px rgba(225, 29, 46, 0.06);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
 }
 
 .hover-line {
@@ -143,8 +163,7 @@ body {
 }
 
 .hover-line:hover {
-  transform: translateX(8px);
-  color: #e11d2e;
+  color: var(--accent);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -155,7 +174,8 @@ body {
   .hover-line:hover,
   .hero-name,
   .hero-rule,
-  .hero-copy {
+  .hero-copy,
+  .section-rule {
     animation: none;
     opacity: 1;
     transform: none;

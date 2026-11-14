@@ -5,12 +5,15 @@ export default function Education() {
   return (
     <section id="education" className="bg-[var(--page)] px-4 py-20 md:px-10 lg:px-16">
       <div className="mx-auto max-w-7xl">
-        <span className="rounded-full bg-[var(--chip)] px-3 py-1 text-xs font-bold tracking-wider text-[var(--muted)] uppercase">
-          Academic Background
-        </span>
-        <h2 className="mt-2 text-4xl font-bold tracking-tight text-[var(--ink)]">Education</h2>
+        <Reveal className="topic">
+          <span className="rounded-full bg-[var(--chip)] px-3 py-1 text-xs font-bold tracking-wider text-[var(--muted)] uppercase">
+            Academic Background
+          </span>
+          <h2 className="mt-2 text-4xl font-bold tracking-tight text-[var(--ink)]">Education</h2>
+          <span className="section-rule" />
+        </Reveal>
 
-        <Reveal>
+        <Reveal delay={160}>
         <a
           href="https://www.rmutt.ac.th/"
           target="_blank"
