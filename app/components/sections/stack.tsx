@@ -2,20 +2,20 @@ import Reveal from "../ui/reveal";
 import { currentTools, stacks } from "@/lib/data";
 
 const labels: Record<string, string> = {
-  html5: "HTML5",
-  sass: "Sass",
   bootstrap: "Bootstrap",
   tailwindcss: "Tailwind",
   react: "React",
   nextjs: "Next.js",
+  java: "Java",
   kotlin: "Kotlin",
-  spring: "Spring",
+  spring: "Spring Boot",
   go: "Go",
-  grpc: "gRPC",
+  gin: "Gin",
+  fiber: "Fiber",
+  javascript: "JavaScript",
+  typescript: "TypeScript",
   express: "Express",
   nestjs: "NestJS",
-  graphql: "GraphQL",
-  "dot-net": ".NET",
   mongodb: "MongoDB",
   mysql: "MySQL",
   mariadb: "MariaDB",
@@ -23,12 +23,11 @@ const labels: Record<string, string> = {
   microsoftsqlserver: "SQL Server",
   redis: "Redis",
   amazonwebservices: "AWS",
-  googlecloud: "Google Cloud",
   firebase: "Firebase",
+  googlecloud: "Google Cloud",
   docker: "Docker",
   kubernetes: "Kubernetes",
   terraform: "Terraform",
-  jenkins: "Jenkins",
 };
 
 function toolName(iconUrl: string) {

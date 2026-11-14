@@ -17,19 +17,21 @@ export default function ThemeSwitch() {
     setTheme(next);
   };
 
+  const next = theme === "light" ? "dark" : "light";
+
   return (
-    <div className="flex items-center gap-3 text-[11px] tracking-wide text-[var(--muted)] uppercase">
-      {(["light", "dark"] as const).map((item) => (
-        <button
-          key={item}
-          type="button"
-          onClick={() => choose(item)}
-          aria-pressed={theme === item}
-          className={theme === item ? "text-[var(--ink)]" : "text-[var(--muted)]"}
-        >
-          {item}
-        </button>
-      ))}
+    <div className="flex items-center gap-2 text-xs text-[var(--muted)]">
+      <span>Theme</span>
+      <button
+        type="button"
+        onClick={() => choose(next)}
+        aria-pressed={theme === "dark"}
+        title={next === "dark" ? "Switch to dark theme" : "Switch to light theme"}
+        className="group font-medium text-[var(--ink)] transition duration-300 hover:-translate-y-0.5 hover:text-[var(--accent)]"
+      >
+        <span className="group-hover:hidden">{theme === "light" ? "Light" : "Dark"}</span>
+        <span className="hidden group-hover:inline">{next === "light" ? "Light" : "Dark"}</span>
+      </button>
     </div>
   );
 }
