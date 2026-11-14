@@ -1,11 +1,12 @@
-import Reveal from "../ui/reveal";
+import ThemeSwitch from "./theme-switch";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#f3f4f5]">
-      <Reveal className="topic mx-auto flex max-w-7xl items-center justify-center px-4 py-10 text-center">
-        <p className="text-sm text-[#6C727F]">© 2026 Wachayathorn Singsena</p>
-      </Reveal>
+    <footer className="bg-[var(--band)]">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-8">
+        <p className="text-sm text-[var(--muted)]">© 2026 Wachayathorn Singsena</p>
+        <ThemeSwitch />
+      </div>
     </footer>
   );
 }

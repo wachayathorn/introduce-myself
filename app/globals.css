@@ -8,58 +8,91 @@
   --color-white: #ffffff;
 }
 
+:root {
+  --page: #f8f9fa;
+  --band: #f3f4f5;
+  --card: transparent;
+  --ink: #111418;
+  --body: #191c1d;
+  --muted: #6c727f;
+  --soft-text: #45474a;
+  --line: #e5e7eb;
+  --rule: #e7e8e9;
+  --chip: #f3f4f6;
+  --accent: #e11d2e;
+  --hover-fill: #0a0a0a;
+  --hover-ink: #ffffff;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --page: #000000;
+  --band: rgba(255, 255, 255, 0.03);
+  --card: rgba(255, 255, 255, 0.03);
+  --ink: #f5f5f5;
+  --body: #ececec;
+  --muted: #b5b5b5;
+  --soft-text: #d6d6d6;
+  --line: rgba(255, 255, 255, 0.14);
+  --rule: rgba(255, 255, 255, 0.1);
+  --chip: rgba(255, 255, 255, 0.08);
+  --accent: #e11d2e;
+  --hover-fill: #f5f5f5;
+  --hover-ink: #111418;
+  color-scheme: dark;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
-@keyframes fade-in-up {
+body {
+  background: var(--page);
+  color: var(--body);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+:root[data-theme="dark"] :is(.rounded-2xl, .rounded-xl) {
+  backdrop-filter: blur(16px);
+}
+
+@keyframes hero-fade {
   from {
     opacity: 0;
-    transform: translateY(20px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
-@keyframes hero-arrive {
+@keyframes hero-draw {
   from {
-    opacity: 0;
-    transform: translateY(110%);
+    transform: scaleX(0);
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+    transform: scaleX(1);
   }
-}
-
-.animate-fade-in-up {
-  animation: fade-in-up 1s ease-out forwards;
-}
-
-.animation-delay-300 {
-  animation-delay: 0.3s;
-  opacity: 0;
 }
 
 .font-display {
   font-family: var(--font-display);
 }
 
-.hero-line {
-  display: block;
-  overflow: hidden;
-  padding-bottom: 0.06em;
+.hero-name {
+  animation: hero-fade 0.8s ease both;
 }
 
-.hero-line > span {
-  display: block;
-  animation: hero-arrive 1.05s cubic-bezier(0.22, 1, 0.36, 1) both;
+.hero-rule {
+  margin-top: 1.5rem;
+  height: 2px;
+  width: 4.5rem;
+  background: var(--accent);
+  transform-origin: center;
+  animation: hero-draw 0.6s 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.hero-line-delay > span {
-  animation-delay: 0.18s;
+.hero-copy {
+  animation: hero-fade 0.8s 1.05s ease both;
 }
 
 .lazy-show {
@@ -89,7 +122,7 @@ html {
 #experience .rounded-2xl.border:hover,
 #education .rounded-2xl.border:hover,
 #contact .rounded-xl.border:hover {
-  border-color: #111418;
+  border-color: var(--ink);
 }
 
 .hover-pop {
@@ -120,9 +153,9 @@ html {
   .lazy-show.topic.is-shown:hover,
   .hover-pop:hover,
   .hover-line:hover,
-  .hero-line > span,
-  .animate-fade-in-up,
-  .animation-delay-300 {
+  .hero-name,
+  .hero-rule,
+  .hero-copy {
     animation: none;
     opacity: 1;
     transform: none;
